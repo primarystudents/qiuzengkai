@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>邱曾恺 · 数据分析作品集</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --card:#ffffff; --ink:#1c2333; --ink-2:#4a5568; --ink-3:#8a94a6;
+    --accent:#2b5aed; --accent-soft:#eaf0ff; --line:#e6eaf2;
+    --green:#0a9e6b; --orange:#d97a1f; --purple:#7a4fd0;
+    --radius:16px; --shadow:0 2px 12px rgba(28,35,51,.06);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px 64px;}
+
+  /* ---- Hero ---- */
+  .hero{padding:56px 0 36px;}
+  .hero .avatar{
+    width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#2b5aed,#7a4fd0);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .hero h1{font-size:30px;font-weight:700;letter-spacing:.5px;}
+  .hero .sub{margin-top:6px;font-size:16px;color:var(--ink-2);}
+  .hero .sub b{color:var(--accent);font-weight:600;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .tag{
+    font-size:13px;color:var(--ink-2);background:var(--card);border:1px solid var(--line);
+    padding:5px 12px;border-radius:999px;
+  }
+  .tag.hot{color:var(--accent);background:var(--accent-soft);border-color:#cdd9ff;font-weight:500;}
+
+  /* ---- Section ---- */
+  .section{margin-top:40px;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;}
+  .sec-head h2{font-size:20px;font-weight:700;}
+  .sec-head span{font-size:13px;color:var(--ink-3);}
+  .divider{height:1px;background:var(--line);margin-top:14px;}
+
+  /* ---- Work cards ---- */
+  .works{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:768px){.works{grid-template-columns:1fr 1fr;}}
+  .work-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .work-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(28,35,51,.10);}
+  .work-card.feature{grid-column:1 / -1;}
+  .work-top{display:flex;align-items:center;gap:12px;}
+  .work-icon{
+    width:44px;height:44px;border-radius:12px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .chip{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;}
+  .chip.board{color:var(--accent);background:var(--accent-soft);}
+  .chip.report{color:var(--green);background:#e6f6f0;}
+  .chip.mindmap{color:var(--purple);background:#f1ebfc;}
+  .work-card h3{font-size:17px;font-weight:700;line-height:1.4;}
+  .work-card.feature h3{font-size:19px;}
+  .work-card p{font-size:14px;color:var(--ink-2);}
+  .work-meta{display:flex;flex-wrap:wrap;gap:6px;}
+  .work-meta span{font-size:12px;color:var(--ink-3);background:var(--bg);border:1px solid var(--line);padding:2px 9px;border-radius:6px;}
+  .work-actions{display:flex;gap:10px;margin-top:auto;padding-top:6px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;min-height:44px;
+    font-size:14px;font-weight:600;padding:0 16px;border-radius:10px;
+    border:none;cursor:pointer;text-decoration:none;
+    transition:opacity .15s ease;
+  }
+  .btn:active{opacity:.8;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-ghost{background:var(--bg);color:var(--ink-2);border:1px solid var(--line);}
+
+  /* ---- Skills ---- */
+  .skills{display:grid;grid-template-columns:1fr;gap:12px;}
+  @media(min-width:768px){.skills{grid-template-columns:1fr 1fr 1fr;}}
+  .skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;}
+  .skill-card h4{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .skill-card ul{list-style:none;margin-top:10px;}
+  .skill-card li{font-size:13px;color:var(--ink-2);padding:3px 0 3px 16px;position:relative;}
+  .skill-card li::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+
+  /* ---- Footer ---- */
+  footer{margin-top:56px;text-align:center;color:var(--ink-3);font-size:13px;}
+  footer .dot{margin:0 8px;}
+  .toast{
+    position:fixed;left:50%;bottom:36px;transform:translateX(-50%) translateY(20px);
+    background:var(--ink);color:#fff;font-size:14px;padding:10px 20px;border-radius:10px;
+    opacity:0;pointer-events:none;transition:all .25s ease;z-index:99;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 头部 -->
+  <header class="hero">
+    <div class="avatar">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="12" width="4" height="9" rx="1" fill="#fff" opacity=".85"/>
+        <rect x="10" y="7" width="4" height="14" rx="1" fill="#fff" opacity=".95"/>
+        <rect x="17" y="3" width="4" height="18" rx="1" fill="#fff"/>
+      </svg>
+    </div>
+    <h1>邱曾恺 · 数据分析作品集</h1>
+    <p class="sub">数据分析师 ｜ 用数据回答业务问题：从<b>指标拆解</b>到<b>归因洞察</b>，再到<b>可视化看板</b></p>
+    <div class="tags">
+      <span class="tag hot">电商 / 种草营销分析</span>
+      <span class="tag hot">机票电商 · 收益管理</span>
+      <span class="tag">指标体系搭建</span>
+      <span class="tag">可视化看板</span>
+      <span class="tag">Python · SQL</span>
+      <span class="tag">供应链 & 跨境贸易方向</span>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- 作品区 -->
+  <section class="section">
+    <div class="sec-head">
+      <h2>精选作品</h2>
+      <span>点击卡片即可在线查看，无需登录</span>
+    </div>
+    <div class="works">
+
+      <!-- 作品1：达人种草分析看板（交互看板，置顶大卡） -->
+      <article class="work-card feature">
+        <div class="work-top">
+          <div class="work-icon" style="background:var(--accent-soft);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="3" stroke="#2b5aed" stroke-width="1.8"/>
+              <path d="M7 15l3-4 3 2 4-6" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="chip board">交互式看板</span>
+        </div>
+        <h3>达人种草分析看板</h3>
+        <p>面向电商达人种草投放场景的交互式分析看板：围绕成交 GMV、达人分层与投放效率搭建指标体系，支持多维度下钻对比，辅助判断"投给谁、投多少、值不值"。</p>
+        <div class="work-meta">
+          <span>GMV 分析</span><span>达人分层</span><span>投放 ROI</span><span>指标拆解</span>
+        </div>
+        <div class="work-actions">
+          <a class="btn btn-primary" href="works/dashboard.html" target="_blank" rel="noopener">
+            查看作品
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <button class="btn btn-ghost" data-url="works/dashboard.html">复制链接</button>
+        </div>
+      </article>
+
+      <!-- 作品2：电商种草分析洞察报告 -->
+      <article class="work-card">
+        <div class="work-top">
+          <div class="work-icon" style="background:#e6f6f0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#0a9e6b" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9 12h6M9 16h4" stroke="#0a9e6b" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="chip report">分析报告</span>
+        </div>
+        <h3>电商种草分析洞察 · 骆驼品牌</h3>
+        <p>以骆驼品牌为例的种草投放分析：从曝光、CPM、成本结构到转化对比，定位投放浪费环节并给出可执行的优化建议。</p>
+        <div class="work-meta">
+          <span>CPM / 成本</span><span>曝光转化</span><span>投放诊断</span>
+        </div>
+        <div class="work-actions">
+          <a class="btn btn-primary" href="works/insight/index.html" target="_blank" rel="noopener">
+            查看作品
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <button class="btn btn-ghost" data-url="works/insight/index.html">复制链接</button>
+        </div>
+      </article>
+
+      <!-- 作品3：指标拆解体系思维导图 -->
+      <article class="work-card">
+        <div class="work-top">
+          <div class="work-icon" style="background:#f1ebfc;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="9" width="6" height="6" rx="1.5" stroke="#7a4fd0" stroke-width="1.8"/>
+              <rect x="16" y="3" width="6" height="6" rx="1.5" stroke="#7a4fd0" stroke-width="1.8"/>
+              <rect x="16" y="15" width="6" height="6" rx="1.5" stroke="#7a4fd0" stroke-width="1.8"/>
+              <path d="M9 12h3.5M12.5 12V6H16M12.5 12v6H16" stroke="#7a4fd0" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="chip mindmap">思维导图</span>
+        </div>
+        <h3>数据指标完整拆解体系 · 库存损失率 + 收益预测</h3>
+        <p>机票电商库存优化与收益预测项目的指标拆解体系：自上而下拆解库存损失率与收益预测的完整指标树，展示结构化的业务分析方法论。</p>
+        <div class="work-meta">
+          <span>指标体系</span><span>库存优化</span><span>收益预测</span><span>机票电商</span>
+        </div>
+        <div class="work-actions">
+          <a class="btn btn-primary" href="works/mindmap.html" target="_blank" rel="noopener">
+            查看作品
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <button class="btn btn-ghost" data-url="works/mindmap.html">复制链接</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 能力区 -->
+  <section class="section">
+    <div class="sec-head">
+      <h2>分析能力</h2>
+      <span>作品背后的方法与工具</span>
+    </div>
+    <div class="skills">
+      <div class="skill-card">
+        <h4>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2b5aed" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round"/></svg>
+          指标体系与拆解
+        </h4>
+        <ul>
+          <li>OSM / 数量 × 单位价值拆解</li>
+          <li>基线 → 变化 → 归因的分析路径</li>
+          <li>库存损失率、收益预测指标树</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round"/><rect x="7" y="12" width="3" height="5" rx=".8" fill="#2b5aed"/><rect x="12" y="8" width="3" height="9" rx=".8" fill="#2b5aed"/><rect x="17" y="10" width="3" height="7" rx=".8" fill="#2b5aed"/></svg>
+          数据分析与建模
+        </h4>
+        <ul>
+          <li>Python（pandas）数据清洗与分析</li>
+          <li>SQL 多表关联与指标计算</li>
+          <li>投放 ROI 分层、成本结构诊断</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="#2b5aed" stroke-width="1.8"/><path d="M7 14l3-3 2.5 2L16 9" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21h6" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round"/></svg>
+          可视化与表达
+        </h4>
+        <ul>
+          <li>交互式看板搭建</li>
+          <li>分析报告与结论表达</li>
+          <li>思维导图方法论沉淀</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    数据分析作品集<span class="dot">·</span>邱曾恺<span class="dot">·</span>所有作品均可点击在线查看
+  </footer>
+</div>
+
+<div class="toast" id="toast">链接已复制</div>
+
+<script>
+(function(){
+  var toast = document.getElementById('toast');
+  var timer = null;
+  function showToast(){
+    toast.classList.add('show');
+    if(timer){ clearTimeout(timer); }
+    timer = setTimeout(function(){ toast.classList.remove('show'); }, 1600);
+  }
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(showToast, function(){ fallbackCopy(text); });
+    }else{
+      fallbackCopy(text);
+    }
+  }
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand('copy'); showToast(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+  var buttons = document.querySelectorAll('button[data-url]');
+  for(var i = 0; i < buttons.length; i++){
+    (function(btn){
+      btn.addEventListener('click', function(){
+        copyText(new URL(btn.getAttribute('data-url'), location.href).href);
+      });
+    })(buttons[i]);
+  }
+})();
+</script>
+</body>
+</html>

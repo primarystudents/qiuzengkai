@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电商种草分析洞察 · 骆驼品牌</title>
+<style>
+  :root{
+    --green:#1f3d2b;
+    --green-2:#2f5c40;
+    --orange:#e07a2f;
+    --orange-2:#f5a45f;
+    --sand:#faf7f1;
+    --card:#ffffff;
+    --ink:#2b2b2b;
+    --muted:#6b6b6b;
+    --line:#e7e0d3;
+    --gold:#c99a3f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--sand);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:15px;
+  }
+  header{
+    background:linear-gradient(135deg,#1f3d2b 0%,#2f5c40 55%,#3d7351 100%);
+    color:#fff;padding:64px 24px 88px;text-align:center;position:relative;overflow:hidden;
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;
+    background:var(--sand);border-radius:100% 100% 0 0 / 100% 100% 0 0;
+  }
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:4px;color:#ffd9b3;
+    border:1px solid rgba(255,217,179,.45);padding:4px 16px;border-radius:999px;margin-bottom:18px;
+  }
+  header h1{font-size:42px;letter-spacing:2px;font-weight:800;}
+  header p.sub{margin-top:12px;font-size:15px;color:#d9e6dd;letter-spacing:1px;}
+  .meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:20px;font-size:13px;color:#bcd6c6;}
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(31,61,43,.06);
+  }
+  nav ul{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;gap:6px;flex-wrap:wrap;list-style:none;}
+  nav a{
+    display:inline-block;padding:13px 16px;font-size:14px;color:var(--green);
+    text-decoration:none;font-weight:600;border-bottom:2px solid transparent;transition:.2s;
+  }
+  nav a:hover{border-bottom-color:var(--orange);color:var(--orange);}
+  nav a.active{border-bottom-color:var(--orange);color:var(--orange);}
+  main{max-width:1180px;margin:0 auto;padding:30px 24px 80px;}
+  section{margin-top:56px;}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .sec-num{
+    background:var(--orange);color:#fff;font-size:14px;font-weight:800;
+    width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    box-shadow:0 4px 12px rgba(224,122,47,.3);
+  }
+  .sec-head h2{font-size:26px;color:var(--green);font-weight:800;letter-spacing:1px;}
+  .sec-head .bar{flex:1;height:2px;background:linear-gradient(90deg,var(--orange-2),transparent);}
+  .sub-head{margin:26px 0 14px;}
+  .sub-head h3{font-size:20px;color:var(--green-2);font-weight:800;display:flex;align-items:center;gap:10px;}
+  .sub-head h3::before{content:"";width:6px;height:20px;background:var(--orange);border-radius:3px;}
+  .step{margin:34px 0 10px;}
+  .step h4{font-size:16px;color:var(--ink);font-weight:800;display:flex;align-items:center;gap:8px;}
+  .step h4 .tag{background:var(--green);color:#fff;font-size:12px;padding:1px 10px;border-radius:999px;font-weight:600;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;box-shadow:0 2px 10px rgba(31,61,43,.05);}
+  .lead{
+    background:var(--card);border-left:5px solid var(--orange);border-radius:12px;
+    padding:22px 26px;font-size:16px;box-shadow:0 2px 10px rgba(31,61,43,.05);
+  }
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:26px 0;}
+  .kpi{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px;text-align:center;
+    box-shadow:0 2px 10px rgba(31,61,43,.05);transition:transform .2s;
+  }
+  .kpi:hover{transform:translateY(-3px);}
+  .kpi .num{font-size:28px;font-weight:800;color:var(--orange);letter-spacing:.5px;}
+  .kpi .num small{font-size:15px;font-weight:600;color:var(--green-2);}
+  .kpi .lbl{margin-top:6px;font-size:13px;color:var(--muted);}
+  .stat-band{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0;}
+  .stat{background:linear-gradient(135deg,#fff,#fbf6ee);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .stat .k{font-size:13px;color:var(--muted);}
+  .stat .v{font-size:20px;font-weight:800;color:var(--green);margin-top:2px;}
+  .stat .v em{font-style:normal;color:var(--orange);}
+  ul.clean{list-style:none;margin:8px 0;}
+  ul.clean li{padding:7px 0 7px 26px;position:relative;}
+  ul.clean li::before{content:"";position:absolute;left:6px;top:16px;width:8px;height:8px;border-radius:3px;background:var(--orange);}
+  ul.clean li strong{color:var(--green);}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0;}
+  .pill{padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--line);background:#fff;}
+  .pill.focus{background:#eaf3ee;color:var(--green);border-color:#cfe0d5;}
+  .pill.watch{background:#fbf4e7;color:#a97817;border-color:#ecd9ae;}
+  .pill.kill{background:#fbeaea;color:#b34040;border-color:#eccfcf;}
+  .pill.sec{background:#f0f2f5;color:#4a5568;border-color:#dde2e8;}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 2px 10px rgba(31,61,43,.05);}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px;}
+  thead th{
+    background:var(--green);color:#fff;font-weight:700;text-align:left;
+    padding:13px 14px;white-space:nowrap;font-size:13px;letter-spacing:.3px;
+  }
+  tbody td{padding:14px;border-top:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:#fbf9f4;}
+  tbody tr:hover{background:#f6f1e7;}
+  td strong{color:var(--green);}
+  td .cpm{
+    display:inline-block;background:#fdf0e2;color:#c05f13;font-weight:800;
+    padding:2px 10px;border-radius:999px;font-size:13px;white-space:nowrap;
+  }
+  .cell-tag{display:block;font-size:12px;color:var(--green-2);font-weight:700;margin-top:8px;}
+  .note{font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .img-cell{display:flex;gap:8px;align-items:center;}
+  .img-cell figure{text-align:center;margin:0;}
+  .img-cell img{
+    width:86px;height:auto;max-height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--line);
+    cursor:zoom-in;transition:transform .2s, box-shadow .2s;background:#f0ede6;
+  }
+  .img-cell img:hover{transform:scale(1.06);box-shadow:0 6px 18px rgba(31,61,43,.25);}
+  .img-cell figcaption{font-size:11px;color:var(--muted);margin-top:4px;}
+  .lightbox{
+    display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.85);
+    align-items:center;justify-content:center;padding:30px;cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:92%;max-height:92%;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+  .idea{
+    background:linear-gradient(135deg,#1f3d2b,#2f5c40);color:#fff;border-radius:14px;
+    padding:24px 28px;margin:22px 0;box-shadow:0 6px 18px rgba(31,61,43,.25);
+  }
+  .idea .core{font-size:19px;font-weight:800;color:#ffd9b3;margin-bottom:6px;}
+  .idea p{color:#e6efe9;font-size:14.5px;}
+  .strat-table td:first-child{width:150px;font-weight:700;color:var(--green);background:#f4f8f4;}
+  .strat-table ul{margin:0 0 0 18px;}
+  .strat-table li{padding:2px 0;}
+  .chart-box{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;
+    box-shadow:0 2px 10px rgba(31,61,43,.05);margin:14px 0;
+  }
+  .chart-box .chart-title{font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+  .chart-box .chart-title::before{content:"📊";font-size:16px;}
+  .chart-box .chart-desc{font-size:12.5px;color:var(--muted);margin-bottom:12px;}
+  .chart-img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block;}
+  .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  footer{background:var(--green);color:#cfe0d5;padding:30px 24px;text-align:center;font-size:13px;}
+  @media (max-width:860px){.chart-row{grid-template-columns:1fr;}}
+  @media (max-width:640px){
+    header h1{font-size:30px;}header{padding:48px 20px 70px;}
+    .sec-head h2{font-size:21px;}.card{padding:20px;}main{padding:20px 14px 60px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">CAMEL · 户外品牌种草复盘</div>
+  <h1>电商种草分析洞察</h1>
+  <p class="sub">骆驼品牌抖音种草效果盘点 · 达人分析 · 内容方向洞察</p>
+  <div class="meta">
+    <span>📅 数据截至 7 月 10 日</span>
+    <span>🎯 对标：安德玛 / 凯乐石 / 伯希和</span>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#s1">一、种草核心结论</a></li>
+    <li><a href="#s2">二、种草效果数据盘点</a></li>
+    <li><a href="#s3">三、达人分析与核心洞察</a></li>
+    <li><a href="#s31">3.1 高性价比达人</a></li>
+    <li><a href="#s32">3.2 大规模且跑赢均值</a></li>
+    <li><a href="#s4">四、内容方向洞察</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="s1">
+  <div class="sec-head"><div class="sec-num">一</div><h2>种草核心结论</h2><div class="bar"></div></div>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="num">447.5<small> 万</small></div><div class="lbl">种草消耗</div></div>
+    <div class="kpi"><div class="num">14.5<small> 万人</small></div><div class="lbl">间接转化</div></div>
+    <div class="kpi"><div class="num">1.2<small> 亿</small></div><div class="lbl">声量</div></div>
+    <div class="kpi"><div class="num">0.12<small>%</small></div><div class="lbl">平均转化率</div></div>
+    <div class="kpi"><div class="num">30.93<small> /人</small></div><div class="lbl">平均转化成本</div></div>
+  </div>
+  <div class="lead">截至 7 月 10 日，<strong>种草消耗共计 447.5 万</strong>，<strong>间接转化 14.5 万人</strong>和<strong>1.2 亿声量</strong>，其中<strong>平均转化率为 0.12%</strong>，<strong>平均转化成本为 30.93 元/人</strong>。</div>
+  <div class="stat-band">
+    <div class="stat"><div class="k">对标行业均值（安德玛 / 凯乐石 / 伯希和）</div><div class="v">种草转化率 ≈ 行业均值 <em>6 倍</em></div></div>
+    <div class="stat"><div class="k">单位成本对比</div><div class="v">仅为行业均值的 <em>1/12</em></div></div>
+    <div class="stat"><div class="k">无效种草率</div><div class="v"><em>10%</em></div></div>
+    <div class="stat"><div class="k">有效种草率</div><div class="v"><em>72%</em></div></div>
+    <div class="stat"><div class="k">无法归类的种草效果</div><div class="v"><em>18%</em></div></div>
+  </div>
+  <div class="card" style="margin-top:8px;">
+    <p>从结果来看，无效种草率为 <strong>10%</strong>，而有效种草率仅为 <strong>72%</strong>，剩下 <strong>18%</strong> 的种草效果无法归类，需要进一步明确种草效果。</p>
+    <p style="margin-top:10px;">从 <strong>CPM</strong>（每千次曝光所消耗的成本，计算公式：<em>有效观看 / 总成本 × 1000</em>）看，有 <strong>59.06%</strong> 的达人 CPM 高于平均 CPM <strong>37.59</strong>，存在进一步优化空间。</p>
+  </div>
+  <div class="sub-head"><h3>策略总结</h3></div>
+  <div class="card">
+    <ol style="margin-left:20px;">
+      <li style="padding:6px 0;">从种草性价比角度，首选<strong>置换合作</strong>和<strong>低价博主（腰部）</strong>，避免掉入<strong>高价大博主陷阱</strong>，可尝试合作更多素人高颜值博主，<strong>以量换价</strong>。</li>
+      <li style="padding:6px 0;">重点关注：<strong>音乐、旅行、摄影、三农、颜值</strong>赛道，淘汰<strong>二次元、测评</strong>赛道。</li>
+      <li style="padding:6px 0;">在<strong>种草性价比接近</strong>时，可以考虑选择<strong>内容强度大</strong>的博主或赛道。</li>
+    </ol>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="sec-head"><div class="sec-num">二</div><h2>种草效果数据盘点</h2><div class="bar"></div></div>
+  <div class="lead">对标安德玛、凯乐石、伯希和等户外品牌，骆驼种草水准从<strong>种草规模、转化率、单位成本</strong>均处于户外<strong>类目 Top1</strong>。</div>
+  <div class="tbl-wrap" style="margin-top:20px;">
+    <table>
+      <thead><tr><th style="width:120px;">维度</th><th>核心数据与结论</th></tr></thead>
+      <tbody>
+        <tr><td><strong>种草效果</strong></td><td>骆驼种草规模（声量）约为 <strong>1.2 亿</strong>，约为同类竞品的 <strong>8 倍</strong>；间接转化人数为 <strong>14.5 万人</strong>，约为同类竞品的 <strong>50 倍</strong>。</td></tr>
+        <tr><td><strong>性价比</strong></td><td>骆驼种草单位成本为 <strong>30.93 元/人</strong>，仅是同类平均种草成本的 <strong>8%</strong>、第二名的 <strong>30%</strong>；种草转化率为 <strong>0.12%</strong>，超出竞品种草综合转化率 <strong>489%</strong>。在种草声量是同类 8 倍、转化数是同类 50 倍的基础上，成本仅为同类的 <strong>4 倍</strong>。</td></tr>
+        <tr><td><strong>无效种草</strong></td><td>骆驼无效种草率仅为 <strong>10%</strong>，处于户外类目 <strong>Top1</strong>。伯希和无效种草率为 <strong>67.6%</strong>，剔除伯希和后，同品类无效种草率为 <strong>13.38%</strong>，比同类低 <strong>3%</strong>。</td></tr>
+        <tr><td><strong>消耗构成</strong></td><td>骆驼达人种草视频数量 <strong>180 个</strong>，种草达人规模处于类目 <strong>Top1</strong>，对种草的<strong>重视程度</strong>处于行业领先。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-box" style="margin-top:18px;">
+    <div class="chart-title">品牌种草效果与种草性价比对比</div>
+    <div class="chart-desc">飞书原文档图表 · 骆驼 vs 安德玛 / 伯希和 / 凯乐石（有效观看、间接转化、单位转化成本、转化率、无效种草率）</div>
+    <img class="chart-img" src="图片和附件/chart_2_compare.png" alt="品牌种草效果与种草性价比对比表">
+  </div>
+</section>
+
+<section id="s3">
+  <div class="sec-head"><div class="sec-num">三</div><h2>达人分析与核心洞察</h2><div class="bar"></div></div>
+
+  <div class="sub-head" id="s31"><h3>3.1 高性价比达人</h3></div>
+  <div class="step"><h4><span class="tag">1</span> 相关定义及达人筛选</h4></div>
+  <div class="tbl-wrap">
+    <table>
+      <tbody>
+        <tr><td style="width:170px;"><strong>业务定义</strong></td><td>在有效种草条件下，每千次曝光成本越低，达人性价比越高，反之，则越低。</td></tr>
+        <tr><td><strong>指标定义</strong></td><td>每 1000 次播放所消耗的成本 = 有效观看 / 总成本 × 1000</td></tr>
+        <tr><td><strong>选择原因</strong></td><td>在保障转化成本的前提下，可以直接满足投入更少的金钱，获得更高的品牌曝光，提高品牌声量与知名度。</td></tr>
+        <tr><td><strong>选择标准（自定义）</strong></td><td>在只保留有效种草的情况下，筛选 CPM ≤ 37.59 的达人</td></tr>
+        <tr><td><strong>标杆达人（前 3 位）</strong></td><td><strong>黑皮couple、迟晓宇、173与174</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step"><h4><span class="tag">2</span> 图表展示</h4></div>
+  <div class="chart-box">
+    <div class="chart-title">每千次曝光成本（CPM）</div>
+    <div class="chart-desc">飞书原文档图表 · 各达人每千次曝光成本横向对比（黑皮couple 2.77 最低，Lalisa 35.45 最高）</div>
+    <img class="chart-img" src="图片和附件/chart_31_cpm.png" alt="每千次曝光成本 CPM 图">
+  </div>
+
+  <div class="step"><h4><span class="tag">3</span> TOP 达人内容下钻分析</h4></div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>达人昵称</th><th>CPM</th><th>视频标题</th><th>视频链接</th><th>引流视频</th><th>主页</th><th>达人风格</th><th>好的原因分析</th><th>怎么做的更好？</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>黑皮couple</strong><br><span class="note">（1条）</span></td>
+          <td><span class="cpm">2.77</span></td>
+          <td>一瓶水的快乐！还不快去试试🥳<br><span class="note">#高难度动作 #黑皮couple #骆驼冲锋衣 #骆驼雨舞者</span></td>
+          <td><a href="https://www.iesdouyin.com/share/video/7522079386510789948" target="_blank" rel="noopener">查看视频 ↗</a></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/ee1da48eadf39c94073ce59cb58d5a2c.jpg" alt="黑皮couple 引流视频"><figcaption>引流视频</figcaption></figure></div></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/ce0f0c2c12c19b3fe89344879539f0b5.jpg" alt="黑皮couple 主页"><figcaption>主页</figcaption></figure></div></td>
+          <td><span class="cell-tag">核心标签</span>#体育生情侣（活力满满，生活化，笑容洋溢）；CP 形象，营造幸福的一对。<span class="cell-tag">粉丝画像推测</span>年龄 18-30 岁，喜欢看恋爱日常、运动娱乐的年轻群体；兴趣：运动、旅行、搞笑；消费心理更注重日常生活、功能性，看重性价比。</td>
+          <td><span class="cell-tag">成功点</span>情绪价值高，CP 互动，运动感互动感和笑容饱满；高难度动作和炫酷的技巧；无明显广告植入，展现更日常。<span class="cell-tag">转化高的潜在原因</span>博主调性与运动、户外更贴近，粉丝真实度和粘性更高，粉丝群体与骆驼性价比潮流形象贴近；生活化展示，洒水暗示冲锋衣防水特性。</td>
+          <td>内容上：多点互动内容，增添场景化剧情。视觉上可选择旅行、山河湖泊的背景，在晴天的白天拍摄。评论区引导：多些品牌展示，引导骆驼品牌展现，如"穿搭好美，什么品牌的"。</td>
+        </tr>
+        <tr>
+          <td><strong>迟晓宇</strong><br><span class="note">（1条）</span></td>
+          <td><span class="cpm">3.71</span></td>
+          <td>我看看能不能到30达布溜<br><span class="note">#迟晓宇 #盗将行dj #一学就会系列 #骆驼追寻2代 #骆驼慢跑鞋</span></td>
+          <td><a href="https://www.douyin.com/video/7522109699690728764" target="_blank" rel="noopener">查看视频 ↗</a></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%204.png" alt="迟晓宇 引流视频"><figcaption>引流视频</figcaption></figure></div></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%205.png" alt="迟晓宇 主页"><figcaption>主页</figcaption></figure></div></td>
+          <td><span class="cell-tag">核心标签</span>生活化美女，ootd 日常展示；笑容、娱乐、动感引导。<span class="cell-tag">粉丝画像推测</span>年龄：18-35 岁，偏好高颜值、氛围感内容，男性占比高；兴趣：美女、穿搭；消费心理：更注重情绪价值的满足。</td>
+          <td>生活化展示，在小区中跳舞更贴近日常生活，富有动感的舞步带上洋溢的笑容活力满满；穿搭适配且吸睛，上身浅色短袖配上灰色运动短裙再搭配白色运动鞋，符合当下审美时尚潮流。</td>
+          <td><span class="cell-tag">转化引导优化</span>适当增加品牌露出，如加入鞋子特写展示；评论区引导骆驼品牌关注。</td>
+        </tr>
+        <tr>
+          <td><strong>173与174</strong><br><span class="note">（1条）</span></td>
+          <td><span class="cpm">4.52</span></td>
+          <td>有点暧昧了<br><span class="note">#艾玛摇4 #抖音潮流舞蹈大赛 #骆驼登山鞋 #骆驼昆仑山</span></td>
+          <td><a href="https://www.douyin.com/video/7520210062025395515" target="_blank" rel="noopener">查看视频 ↗</a></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%208.png" alt="173与174 引流视频"><figcaption>引流视频</figcaption></figure></div></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%2010.png" alt="173与174 主页"><figcaption>主页</figcaption></figure></div></td>
+          <td><span class="cell-tag">核心风格标签</span>双美女 CP 与传统 CP 的反差，协调的互动与动感舞蹈；性感穿搭、比心和笑容给人一种易接近的感觉；生活化场景。<span class="cell-tag">粉丝画像推测</span>人群：25-40 岁，爱看美女、娱乐互动的人群；兴趣：美女、颜值。</td>
+          <td>性感美女在线跳舞，CP 价值互动，给人美和潮流的感觉；生活化、日常化，舞蹈房 CP 日常无明显营销植入；依靠大众喜欢娱乐、爱美的天性自然流量高。</td>
+          <td>多点品牌展示，无意间露出品牌 logo，或更注重鞋子展现；带骆驼品牌话题，评论区往鞋子去引导。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step"><h4><span class="tag">4</span> 策略总结</h4></div>
+  <div class="idea">
+    <div class="core">核心策略：打造「自然共生」品牌叙事</div>
+    <p>核心理念："骆驼，自然的一部分"——强调产品与自然环境的和谐共生，弱化商业感，强化情感共鸣，进一步提升与品牌的契合度。</p>
+  </div>
+  <div class="tbl-wrap strat-table">
+    <table>
+      <thead><tr><th style="width:150px;">优化方向</th><th>具体策略</th></tr></thead>
+      <tbody>
+        <tr><td>内容方向优化</td><td><ul class="clean"><li>更强调生活化的日常展示，更贴近日常生活，表现活力、笑容饱满。</li><li>良好且符合大众审美的穿搭搭配，<strong>突出产品细节</strong>：在生活化展示和弱品牌植入的基础上，增加对产品的曝光时长和视野，可突出穿搭品牌特性，像鞋子的独特设计等。</li><li>更多元化的场景：除了小区、街道等日常场景外，可以多些公园、附近的旅行景点，更运动化的场景更突出骆驼品牌的实用场景。</li></ul></td></tr>
+        <tr><td>视觉与情绪设计</td><td><ul class="clean"><li>色调：自然色系为主（大地棕、苔藓绿、天空蓝），避免高饱和广告色。</li><li>音乐：轻音乐，强化沉浸感或动感的舞蹈配乐。</li><li>文案风格：弱化促销话术，改用诗意表达——"这双鞋，陪你走过四季的泥土""冲锋衣：你的第二层皮肤，风雨中的家"。</li></ul></td></tr>
+        <tr><td>用户互动策略</td><td><ul class="clean"><li>UGC 内容引导：穿搭搭配引导，更多展示用户的 OOTD；时尚、潮流引导用户对品牌形成印象。</li></ul></td></tr>
+        <tr><td>品牌差异化锚点</td><td><ul class="clean"><li>反对"过度装备化"：强调"回归自然本质"，不堆砌科技参数，而是展示——"一件穿 5 年的冲锋衣""越穿越合脚的鞋子"。</li><li>自然保护关联：每笔订单捐赠 1 元给环保项目（在视频角落标注，不刻意宣传）。</li></ul></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-head" id="s32" style="margin-top:56px;"><h3>3.2 大规模且跑赢均值的达人</h3></div>
+  <div class="step"><h4><span class="tag">1</span> 相关定义及达人筛选</h4></div>
+  <div class="tbl-wrap">
+    <table>
+      <tbody>
+        <tr><td style="width:170px;"><strong>定义</strong></td><td>达人单位转化成本 &lt; 30.93 且 达人有效观看、转化率均高于均值</td></tr>
+        <tr><td><strong>衡量标准</strong></td><td>① 达人单位转化成本 = 总成本 / 间接转化人数 &lt; 30.93（平均单位转化成本）<br>② 有效观看、转化率大于均值<br><span class="note">*注：本次计算并未剔除报价为 0 的达人，报价为零的达人的达人加热成本即为总成本。</span></td></tr>
+        <tr><td><strong>选择原因</strong></td><td>① 性价比高，用更低的成本转化更多的用户<br>② 视频质量好，有效观看、转化均高于均值</td></tr>
+        <tr><td><strong>选择标准（自定义）</strong></td><td>① 达人单位转化成本 = 报价 / 间接转化人数 &lt; 30.93<br>② 筛选有效观看大于均值的达人后再筛选转化率大于均值的达人，最后升序排列，选择前 3 名达人。</td></tr>
+        <tr><td><strong>标杆达人（前 2 位）</strong></td><td>黑皮couple、爱吃香菜菜、soil<br><span class="note">（黑皮couple在之前已有过展示，本次就只展示爱吃香菜菜和soil）</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step"><h4><span class="tag">2</span> 图表展示</h4></div>
+  <div class="chart-box">
+    <div class="chart-title">平均有效观看数和转化成本组合图</div>
+    <div class="chart-desc">飞书原文档图表 · 蓝线为单位转化成本计算值，浅蓝柱为每条视频平均观看数</div>
+    <img class="chart-img" src="图片和附件/chart_32_cost.png" alt="平均有效观看数和转化成本组合图">
+  </div>
+
+  <div class="step"><h4><span class="tag">3</span> TOP 达人内容下钻分析</h4></div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>达人昵称</th><th>达人单位转化成本（元/人）</th><th>达人粉丝数</th><th>视频标题</th><th>视频链接</th><th>引流视频</th><th>主页</th><th>达人风格</th><th>好的原因分析</th><th>怎么做的更好？</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>爱吃香菜菜</strong><br><span class="note">（3条，取转化最高的一条分析）</span></td>
+          <td><span class="cpm">6.36</span></td>
+          <td><strong>8.3 万</strong></td>
+          <td>就这个冲锋衣 爽！<br><span class="note">#扫腿舞挑战 @骆驼户外官方旗舰店 #骆驼冲锋衣 #骆驼极境冒险家冲锋衣</span></td>
+          <td><a href="https://www.douyin.com/video/7524647460837412153" target="_blank" rel="noopener">查看视频 ↗</a></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%201.png" alt="爱吃香菜菜 引流视频"><figcaption>引流视频</figcaption></figure></div></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%207.png" alt="爱吃香菜菜 主页"><figcaption>主页</figcaption></figure></div></td>
+          <td><span class="cell-tag">博主核心标签</span>情侣 CP、恋爱氛围：视频以举高高为主，烘托男友力 Max，搭配甜美的笑容营造一种恋爱的甜蜜感。半素人情侣博主：账号无 MCN 标签，视频无明显商业气息，以隐形品牌植入为主，如添加骆驼品牌话题、穿骆驼品牌衣服。<span class="cell-tag">粉丝画像推测</span>目标受众：18-25 岁年轻群体（学生/初入职场的 Z 世代），偏好浪漫、甜蜜的高质量 CP 互动、恋爱日常。</td>
+          <td>甜蜜感：甜蜜的笑容配合男友的托举营造一种浪漫的氛围；无明显广告植入，仅以穿搭品牌衣服为主，日常氛围无商业气息；粉丝真实且画像与品牌年轻化的形象契合。</td>
+          <td><span class="cell-tag">一、内容升级</span>增加互动，并展现安全感、陪伴感；夜晚进行柔和补光，或在光线较清晰的氛围下拍摄，使人物面部表情、品牌服饰展现更清晰。<span class="cell-tag">二、转化优化</span>增加骆驼品牌曝光，logo 在画面中的占比，让人一眼就能识别出来品牌。</td>
+        </tr>
+        <tr>
+          <td><strong>soli</strong><br><span class="note">（二条，取转化最高的一条分析）</span></td>
+          <td><span class="cpm">7.61</span></td>
+          <td><strong>60.5 万</strong></td>
+          <td>多少次跌倒在路上<br><span class="note">#西北 @青海初遇旅行 #骆驼追寻2代 #骆驼慢跑鞋</span></td>
+          <td><a href="https://www.douyin.com/note/7522053439728766266" target="_blank" rel="noopener">查看视频 ↗</a></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%206.png" alt="soli 引流视频"><figcaption>引流视频</figcaption></figure></div></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%209.png" alt="soli 主页"><figcaption>主页</figcaption></figure></div></td>
+          <td><span class="cell-tag">博主核心标签</span>大自然的旅行者：很自然的展现，游客照的形式突出旅行那轻松、惬意的氛围；山川河流的背景，展现自然之美。氛围感美女、摄影达人（张张出片）。<span class="cell-tag">粉丝画像推测</span>核心人群：20-30 岁热爱自然、旅行、徒步的年轻群体；消费心理：为潮流买单、身份认同感，能出片的衣服就是好衣服。</td>
+          <td>高颜值团队、年轻化群体，给人年轻活力的感觉，一种生活的向往；大自然、随意的游客照形式的展现，广阔的大地与湛蓝的天空，给人一种诗和远方的意境；出片效果 Max，成为朋友圈游客照标配模版，跟风拍摄。</td>
+          <td><span class="cell-tag">核心方向：深化「沙漠诗人」人设，打造情绪种草标杆</span><span class="cell-tag">一、内容升级</span>视频化动态化，可以采用旅行 vlog 的形式记录旅行日常，或摆脱静态摆拍、动态抓拍，给照片一种动感，如跑步的姿态、登山的抓拍；团队中增加一点互动感，给人一种和朋友一起旅行的欢快氛围；更多采用山地、徒步、森林的照片，更贴近骆驼登山徒步的场景应用；其他团队也随机穿搭骆驼品牌服饰，营造一种年轻化户外潮流穿搭的印象。<span class="cell-tag">二、转化优化</span>评论区轻量化引导文案，露出骆驼品牌，塑造潮牌形象。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step"><h4><span class="tag">4</span> 策略总结</h4></div>
+  <div class="idea">
+    <div class="core">核心策略：塑造户外运动潮牌形象，与 OOTD、旅行出片绑定</div>
+    <p>核心理念："用自然之力，唤醒探索本能"——通过动态视觉与自然场景的结合，让产品成为自由探索的象征，进一步吸引眼球。</p>
+  </div>
+  <div class="tbl-wrap strat-table">
+    <table>
+      <thead><tr><th style="width:150px;">优化方向</th><th>具体策略</th></tr></thead>
+      <tbody>
+        <tr><td>内容方向优化</td><td><ul class="clean"><li>CP 形象博主：增加趣味性互动，如眼神对视、自然的向男生靠近，营造信任感和安全感氛围。</li><li>自然旅行类博主：增加户外运动感、动态化展现，如 vlog 记录旅行瞬间，拍照采用登山进行时的动感，取消游客照类的摆拍。</li></ul></td></tr>
+        <tr><td>视觉与情绪设计</td><td><p><strong>恋爱 CP 达人：光线与氛围的「甜蜜分层」</strong>——选取<strong>黄昏场景</strong>，用<strong>暖金色逆光</strong>拍摄托举瞬间，让骆驼情侣装面料在逆光下呈现柔和光泽，人物周围营造 "光晕感"，强化 "浪漫温暖" 的情绪。</p><p style="margin-top:8px;"><strong>旅行达人：动态化呈现，运用镜头语言的「互动引导」</strong>——选取<strong>山地场景</strong>，用 "跟拍 + 呼吸感运镜"（镜头随达人行走轻微晃动），捕捉骆驼冲锋衣被风吹动的动态，搭配 "风声 + 登山杖触地声"，强化 "探索挑战" 的情绪，让观众从视、听觉沉浸自然，感知品牌装备的 "场景适配力"。</p></td></tr>
+        <tr><td>用户互动策略</td><td><p><strong>情侣 CP 类达人</strong></p><ul class="clean"><li><strong>「情侣挑战 + 品牌穿搭」双驱动</strong>：发起话题 <strong>#骆驼情侣托举挑战</strong>，鼓励情侣模仿视频中 "托举互动 + 骆驼情侣装" 的核心动作拍摄视频。设置奖励：每周选 3 个 "创意托举 + 穿搭展示" 优质视频，赠送<strong>骆驼情侣户外套装</strong>；同时在评论区置顶 "晒出你和 TA 的骆驼情侣装合影"。</li></ul><p style="margin-top:8px;"><strong>自然旅行者类达人</strong></p><ul class="clean"><li><strong>「户外装备推荐」</strong>：给大家推荐更加实用、且兼具设计美感的户外穿搭，介绍骆驼服饰功能，突出骆驼户外品牌的实用性特点。</li></ul></td></tr>
+        <tr><td>品牌差异化锚点</td><td><ul class="clean"><li><strong>理念差异化</strong>：潮流形象 + 户外专业双线打造，与其他品牌专业展现的单一化种草形成差异，给用户营造骆驼独特的品牌形象。</li><li><strong>视觉差异化</strong>：自然的户外纪录，用运动的镜头拍摄一段旅途中不同场景的适配，再与伙伴形成服饰搭配，给用户留下"户外 = 骆驼"的品牌形象，提到户外运动时第一个想起骆驼品牌。</li></ul></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="sec-head"><div class="sec-num">四</div><h2>内容方向洞察</h2><div class="bar"></div></div>
+  <div class="pills">
+    <span class="pill focus">🔍 重点关注：音乐、旅行、摄影、三农、颜值</span>
+    <span class="pill sec">次要关注：剧情、健身、穿搭、亲子</span>
+    <span class="pill watch">持续观察：生活、舞蹈、美食、随拍</span>
+    <span class="pill kill">淘汰达人：二次元、测评</span>
+  </div>
+
+  <div class="step"><h4><span class="tag">1</span> 相关定义及达人筛选</h4></div>
+  <div class="tbl-wrap">
+    <table>
+      <tbody>
+        <tr><td style="width:170px;"><strong>高曝光高转化达人类型</strong></td><td></td></tr>
+        <tr><td><strong>定义</strong></td><td>根据达人类型，筛选出转化率高于平均值的，后对有效观看进行降序排列。</td></tr>
+        <tr><td><strong>衡量标准</strong></td><td>对达人类型打标，对达人类型进行聚合后，筛选出高于平均转化率的达人类型后，对有效观看进行排序，筛选出观看前三的达人类型。</td></tr>
+        <tr><td><strong>选择原因</strong></td><td>① 高于平均的转化率确保了视频的种草转化效果<br>② 高有效观看的类型能最大程度的提高品牌曝光量，提升品牌声量与品牌影响力。</td></tr>
+        <tr><td><strong>选择标准（自定义）</strong></td><td>对达人类型打标，对达人类型进行聚合后，转化率 ≥ 0.13%，根据平均有效观看取前二类达人<br><span class="note">*注：为避免投入成本和条数对观看的影响，所以转化率、有效观看均采取均值作比较（当前类型下平均每条视频有效观看），且本次数据已去除无类型达人。</span></td></tr>
+        <tr><td><strong>标杆达人（前 2 类）</strong></td><td><strong>音乐、旅行</strong><br><span class="note">注：三农由于只有一个达人一条视频，且平均曝光与旅行相差不大，但转化率旅行类达人远超三农，故优选旅行类达人。</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step"><h4><span class="tag">2</span> 图表展示</h4></div>
+  <div class="chart-box">
+    <div class="chart-title">曝光与转化组合图</div>
+    <div class="chart-desc">飞书原文档图表 · 蓝柱为各品类有效观看均值，浅蓝折线为转化率（旅行 0.43% 最高）</div>
+    <img class="chart-img" src="图片和附件/chart_4_exposure.png" alt="曝光与转化组合图">
+  </div>
+
+  <div class="step"><h4><span class="tag">3</span> TOP 达人内容下钻分析</h4></div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>达人类型</th><th>转化率与有效观看</th><th>达人昵称</th><th>视频标题</th><th>视频链接</th><th>引流视频</th><th>主页</th><th>达人风格</th><th>好的原因分析</th><th>怎么做的更好？</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>音乐</strong><br><span class="note">（1条）</span></td>
+          <td>平均有效观看：<strong>248 万</strong><br>平均转化率：<strong>0.13%</strong></td>
+          <td><strong>彭越月</strong></td>
+          <td>解锁新人物靳保镖<br><span class="note">#梓渝摇来了 #求佛dj #康复运动 #骆驼登山鞋 #骆驼太行3代</span></td>
+          <td><a href="https://www.douyin.com/video/7525404765141863723" target="_blank" rel="noopener">查看视频 ↗</a></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image.png" alt="彭越月 引流视频"><figcaption>引流视频</figcaption></figure></div></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%202.png" alt="彭越月 主页"><figcaption>主页</figcaption></figure></div></td>
+          <td><span class="cell-tag">博主核心标签</span>早婚的美女博主；婚后夫妻日常：家庭日常、亲密互动；向往自由爱好音乐、声优博主。<span class="cell-tag">粉丝画像推测</span>核心人群：20-30 岁女性，喜欢户外、已婚 00 后、喜欢音乐；爱好：流行音乐，为兴趣和情绪买单。</td>
+          <td>流行音乐配动感舞蹈，运动感、潮流感十足；丈夫入镜亲密互动，抱起给人一种力量感和安全感；温馨豪华简约的室内装修，搭配青春少女，营造一种惬意、温馨、富足自在的生活环境。</td>
+          <td><span class="cell-tag">一、内容升级</span>场景拓展，户外 + 音乐 + 舞蹈结合，可选择广阔的公园、广场舞类型，打青年广场舞形成反差；互动升级，如男生并没有把女生抱起，反而加入，进行双人互动热舞。<span class="cell-tag">二、转化引导优化</span>置顶评论："很多问防晒衣的宝，是骆驼XXXX系列，主页'拍照穿搭'合集有同款～"</td>
+        </tr>
+        <tr>
+          <td><strong>旅行</strong><br><span class="note">（2条，选择较高转化的进行下钻）</span></td>
+          <td>旅行综合转化率：<strong>0.43%</strong><br>此条转化率：<strong>0.682%</strong></td>
+          <td><strong>kkkkkisum</strong></td>
+          <td>你的脚步流浪在天涯<br><span class="note">#草原 #川西美景 #屌丝</span></td>
+          <td><a href="https://www.iesdouyin.com/share/slides/7525023138469694780" target="_blank" rel="noopener">查看视频 ↗</a></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/image%203.png" alt="kkkkkisum 引流视频"><figcaption>引流视频</figcaption></figure></div></td>
+          <td><div class="img-cell"><figure><img src="图片和附件/70f2b3e93f82d68e9442426a8c784ed6.jpg" alt="kkkkkisum 主页"><figcaption>主页</figcaption></figure></div></td>
+          <td><span class="cell-tag">核心标签</span>#氛围感美女（静图 + BGM，强调视觉美感与情绪共鸣）；#户外治愈风（绿色草原、自然光线，传递自由、生命力）；#轻文艺穿搭（不硬核种草，通过场景和音乐传递产品调性）；#BGM驱动（歌曲《你的脚步流浪在天涯》强化流浪、远方感，契合户外鞋主题）。<span class="cell-tag">粉丝画像推测</span>年龄：18-35 岁，偏好高颜值、氛围感内容，女性占比可能较高；兴趣：旅行摄影、文艺穿搭、轻户外生活方式；消费心理：更注重"产品是否能融入理想生活场景"，而非纯功能导向。</td>
+          <td><span class="cell-tag">成功点</span>强情绪共鸣：BGM + 草原场景唤醒"逃离城市""自由流浪"的向往，间接关联老爹鞋的"户外陪伴"属性；高审美价值：静图构图精致，符合抖音"视觉系种草"趋势，易吸引停留；软性植入：不直接推销，而是让产品成为"理想生活"的一部分，降低广告抵触感。<span class="cell-tag">转化高的潜在原因</span>目标用户（文艺青年、轻户外爱好者）与骆驼老爹鞋的"休闲户外"定位高度契合；静图展示鞋款侧面/背面（如踩在草原上的特写），突出设计感而非功能，更吸引女性用户。</td>
+          <td><span class="cell-tag">一、内容升级</span>强化产品细节：拍雨天和大晴天，骆驼遮风挡雨；在静图中加入 1-2 张功能性展示，如鞋底防滑纹特写（保持美感）。<span class="cell-tag">传播扩散策略</span>BGM 裂变：发起挑战 <strong>#带着骆驼去流浪</strong>，鼓励用户用同款 BGM 拍旅行照 @品牌；头部评论引导："点击下方音乐拍同款，有机会被翻牌哦～"。<span class="cell-tag">二、转化引导优化</span>评论区置顶：结合 BGM 歌词引导——"'流浪天涯'的每一步，都需要一双舒服的老爹鞋👟→ 点我首页有同款" + 购物车链接；发起互动提问："你最想穿这双鞋去哪流浪？抽 1 人送骆驼登山袜"。视频内轻植入：在静图切换间插入 0.5 秒字幕"骆驼老爹鞋｜旅行穿搭神器"（不破坏氛围）；结尾加动态镜头：模特回头微笑 + 鞋子特写，搭配字幕"陪你去远方"。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step"><h4><span class="tag">4</span> 策略总结</h4></div>
+  <div class="idea">
+    <div class="core">核心策略：打造动感、欢快的旅行体验</div>
+    <p>核心理念："用自然之力，唤醒探索本能"——通过动态视觉与背景音乐和自然场景的结合，让产品成为自由探索的象征，进一步吸引眼球。</p>
+  </div>
+  <div class="tbl-wrap strat-table">
+    <table>
+      <thead><tr><th style="width:150px;">优化方向</th><th>具体策略</th></tr></thead>
+      <tbody>
+        <tr><td>内容方向优化</td><td><p><strong>1. 聚焦真实户外场景</strong></p><ul class="clean"><li>优先选择沙漠、雨林、雪山等极具视觉冲击力的自然环境。</li><li>突出产品与自然元素的互动：风雨、沙石、光影。</li></ul><p style="margin-top:8px;"><strong>2. 叙事模式创新</strong>：采用「打破-重建」叙事</p><ul class="clean"><li>前 3 秒：传统户外广告片段（参数罗列 + 摆拍，制造反差）。</li><li>转折点："自然，不该被束缚"（撕掉传统装备）。</li><li>主体展示：在极端环境中自由运动的动态画面。</li></ul></td></tr>
+        <tr><td>视觉与情绪设计</td><td><p><strong>视觉升级：打造「动态自然美学」</strong></p><ul class="clean"><li><strong>场景选择</strong>（极限光影）：沙漠正午（强光与阴影对比）、暴雨丛林（雨滴穿透光斑）、悬崖边缘（衣摆被强风吹起）。</li><li><strong>人物状态</strong>：奔跑/跳跃动作抓拍（防晒衣飘动，展示轻盈）；特写：汗珠从防晒衣表面滑落（强调透气）。</li><li><strong>色调处理</strong>：高对比度调色（突出阳光与衣料的反光质感）；慢镜头 + 颗粒感滤镜（强化"野性生命力"）。</li></ul></td></tr>
+        <tr><td>用户互动策略</td><td><p><strong>1. 挑战赛运营</strong></p><ul class="clean"><li><strong>#自然动能挑战</strong>：用户发布动态户外视频；设置三级挑战难度——城市公园、近郊山地、荒野极限；打卡发布可以进行抽奖，赠送礼品。</li></ul><p style="margin-top:8px;"><strong>2. UGC 内容引导</strong></p><ul class="clean"><li>提供拍摄模板：运镜手法、BGM 推荐、剪辑教程。</li></ul></td></tr>
+        <tr><td>品牌差异化锚点</td><td><ul class="clean"><li><strong>理念差异化</strong>：反对过度装备化——强调"一件足够"的设计哲学，展示产品在极端环境下的可靠性："72 小时一件就够了"；自然共生理念——用产品讲述一个自然故事。</li><li><strong>视觉差异化</strong>：动能视觉标识——多视频包含动态捕捉镜头，建立"看到动态户外就想到骆驼"的视觉联想。</li><li><strong>价值主张差异化</strong>：从功能到精神——不仅是防晒衣，更是"自由探索的许可证"；每个产品附带一个真实探险故事。</li></ul></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step"><h4><span class="tag">5</span> 延伸</h4></div>
+  <div class="card">
+    <p>转化率并非唯一衡量指标，在关注转化率的同时，同时可以考量<strong>间接转化人数</strong>，在这两个指标的加持下，<strong>生活、颜值博主</strong>也可以被重点关注。所以种草评估的指标与方法都是可以由自己定义口径的！大家发散思维，进行延伸即可～</p>
+  </div>
+</section>
+
+</main>
+
+<footer><p>电商种草分析洞察 · 骆驼品牌抖音种草效果复盘</p></footer>
+
+<div class="lightbox" id="lightbox"><img id="lightboxImg" src="" alt=""></div>
+
+<script>
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.img-cell img').forEach(function(img){
+    img.addEventListener('click', function(e){
+      e.stopPropagation(); lbImg.src = img.src; lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') lb.classList.remove('open'); });
+
+  var links = document.querySelectorAll('nav a');
+  var sections = [];
+  links.forEach(function(a){ sections.push(document.getElementById(a.getAttribute('href').slice(1))); });
+  window.addEventListener('scroll', function(){
+    var pos = window.scrollY + 120, current = 0;
+    sections.forEach(function(sec, i){ if(sec && sec.offsetTop <= pos) current = i; });
+    links.forEach(function(a, i){ a.classList.toggle('active', i === current); });
+  });
+</script>
+</body>
+</html>
