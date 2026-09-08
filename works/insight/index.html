@@ -40,7 +40,7 @@
   }
   header h1{font-size:42px;letter-spacing:2px;font-weight:800;}
   header p.sub{margin-top:12px;font-size:15px;color:#d9e6dd;letter-spacing:1px;}
-  .meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:20px;font-size:13px;color:#bcd6c6;}
+  .meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:20px;font-size:13.5px;color:#bcd6c6;}
   nav{
     position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
     backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(31,61,43,.06);
@@ -81,10 +81,10 @@
   .kpi:hover{transform:translateY(-3px);}
   .kpi .num{font-size:28px;font-weight:800;color:var(--orange);letter-spacing:.5px;}
   .kpi .num small{font-size:15px;font-weight:600;color:var(--green-2);}
-  .kpi .lbl{margin-top:6px;font-size:13px;color:var(--muted);}
+  .kpi .lbl{margin-top:6px;font-size:13.5px;color:var(--muted);}
   .stat-band{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0;}
   .stat{background:linear-gradient(135deg,#fff,#fbf6ee);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
-  .stat .k{font-size:13px;color:var(--muted);}
+  .stat .k{font-size:13.5px;color:var(--muted);}
   .stat .v{font-size:20px;font-weight:800;color:var(--green);margin-top:2px;}
   .stat .v em{font-style:normal;color:var(--orange);}
   ul.clean{list-style:none;margin:8px 0;}
@@ -92,24 +92,24 @@
   ul.clean li::before{content:"";position:absolute;left:6px;top:16px;width:8px;height:8px;border-radius:3px;background:var(--orange);}
   ul.clean li strong{color:var(--green);}
   .pills{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0;}
-  .pill{padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--line);background:#fff;}
+  .pill{padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:600;border:1px solid var(--line);background:#fff;}
   .pill.focus{background:#eaf3ee;color:var(--green);border-color:#cfe0d5;}
   .pill.watch{background:#fbf4e7;color:#a97817;border-color:#ecd9ae;}
   .pill.kill{background:#fbeaea;color:#b34040;border-color:#eccfcf;}
   .pill.sec{background:#f0f2f5;color:#4a5568;border-color:#dde2e8;}
   .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 2px 10px rgba(31,61,43,.05);}
-  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px;}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px;}
   thead th{
     background:var(--green);color:#fff;font-weight:700;text-align:left;
-    padding:13px 14px;white-space:nowrap;font-size:13px;letter-spacing:.3px;
+    padding:13px 14px;white-space:nowrap;font-size:13.5px;letter-spacing:.3px;
   }
-  tbody td{padding:14px;border-top:1px solid var(--line);vertical-align:top;}
+  tbody td{padding:15px 16px;border-top:1px solid var(--line);vertical-align:top;line-height:1.65;}
   tbody tr:nth-child(even){background:#fbf9f4;}
   tbody tr:hover{background:#f6f1e7;}
   td strong{color:var(--green);}
   td .cpm{
     display:inline-block;background:#fdf0e2;color:#c05f13;font-weight:800;
-    padding:2px 10px;border-radius:999px;font-size:13px;white-space:nowrap;
+    padding:2px 10px;border-radius:999px;font-size:13.5px;white-space:nowrap;
   }
   .cell-tag{display:block;font-size:12px;color:var(--green-2);font-weight:700;margin-top:8px;}
   .note{font-size:12.5px;color:var(--muted);margin-top:6px;}
@@ -120,7 +120,7 @@
     cursor:zoom-in;transition:transform .2s, box-shadow .2s;background:#f0ede6;
   }
   .img-cell img:hover{transform:scale(1.06);box-shadow:0 6px 18px rgba(31,61,43,.25);}
-  .img-cell figcaption{font-size:11px;color:var(--muted);margin-top:4px;}
+  .img-cell figcaption{font-size:12px;color:var(--muted);margin-top:4px;}
   .lightbox{
     display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.85);
     align-items:center;justify-content:center;padding:30px;cursor:zoom-out;
@@ -142,10 +142,10 @@
   }
   .chart-box .chart-title{font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
   .chart-box .chart-title::before{content:"📊";font-size:16px;}
-  .chart-box .chart-desc{font-size:12.5px;color:var(--muted);margin-bottom:12px;}
+  .chart-box .chart-desc{font-size:13.5px;color:var(--muted);margin-bottom:12px;}
   .chart-img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block;}
   .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  footer{background:var(--green);color:#cfe0d5;padding:30px 24px;text-align:center;font-size:13px;}
+  footer{background:var(--green);color:#cfe0d5;padding:30px 24px;text-align:center;font-size:13.5px;}
   @media (max-width:860px){.chart-row{grid-template-columns:1fr;}}
   @media (max-width:640px){
     header h1{font-size:30px;}header{padding:48px 20px 70px;}
@@ -225,8 +225,21 @@
   </div>
   <div class="chart-box" style="margin-top:18px;">
     <div class="chart-title">品牌种草效果与种草性价比对比</div>
-    <div class="chart-desc">飞书原文档图表 · 骆驼 vs 安德玛 / 伯希和 / 凯乐石（有效观看、间接转化、单位转化成本、转化率、无效种草率）</div>
-    <img class="chart-img" src="图片和附件/chart_2_compare.png" alt="品牌种草效果与种草性价比对比表">
+    <div class="chart-desc">骆驼 vs 安德玛 / 伯希和 / 凯乐石（有效观看、间接转化、单位转化成本、转化率、无效种草率）</div>
+    <div class="tbl-wrap">
+      <table style="min-width:680px;">
+        <thead><tr>
+          <th style="width:110px;">品牌</th><th>有效观看数</th><th>间接转化人数</th><th>单位转化成本(元/人)</th><th>转化率</th><th>无效种草率</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><strong>骆驼</strong></td><td>11903.5万</td><td>14.5万</td><td>30.93</td><td>0.12%</td><td><span class="cpm">10%</span></td></tr>
+          <tr><td><strong>安德玛</strong></td><td>388.0万</td><td>0.3万</td><td>103.55</td><td>0.07%</td><td>≈11%*</td></tr>
+          <tr><td><strong>伯希和</strong></td><td>2746.5万</td><td>0.4万</td><td>573.56</td><td>0.01%</td><td><span class="cpm">67.6%</span></td></tr>
+          <tr><td><strong>凯乐石</strong></td><td>1142.4万</td><td>0.2万</td><td>420.73</td><td>0.02%</td><td>≈14%*</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-desc" style="margin-top:10px;margin-bottom:0;">* 注：原飞书导出图表右侧被裁切，安德玛 / 凯乐石的无效种草率为图表可见值约数（骆驼 10%、伯希和 67.6% 与正文结论一致，为精确值）。</div>
   </div>
 </section>
 
