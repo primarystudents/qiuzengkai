@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="数据分析作品集：达人种草分析看板、电商种草分析洞察、电商库存与收益分析路径三段完整业务实战。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b5aed'/%3E%3Crect x='14' y='34' width='8' height='16' rx='2' fill='%23fff' opacity='.85'/%3E%3Crect x='28' y='24' width='8' height='26' rx='2' fill='%23fff' opacity='.9'/%3E%3Crect x='42' y='14' width='8' height='36' rx='2' fill='%23ffd76a'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小Q · 数据分析作品集">
+<meta property="og:description" content="数据分析作品集：达人种草分析看板、电商种草分析洞察、电商库存与收益分析路径三段完整业务实战。">
+<meta property="og:image" content="https://primarystudents.github.io/xiaoq/assets/preview-dashboard.jpg">
+<meta property="og:url" content="https://primarystudents.github.io/xiaoq/">
+
 <title>小Q · 数据分析作品集</title>
 <style>
   :root{
@@ -30,8 +38,10 @@
     border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 16px;
     font-size:13.5px;letter-spacing:2px;margin-bottom:22px;}
   .hero-badge svg{flex-shrink:0;}
-  .hero h1{font-size:46px;font-weight:800;letter-spacing:1px;line-height:1.25;}
-  .hero h1 .thin{font-weight:300;opacity:.92;}
+  .hero-title .hello{display:block;font-size:16px;font-weight:400;color:rgba(255,255,255,.78);letter-spacing:4px;margin-bottom:12px;}
+  .hero-title .big{display:block;font-size:46px;font-weight:800;letter-spacing:1.5px;line-height:1.22;}
+  .hero-title .big em{font-style:normal;color:#ffd76a;}
+  .hero .tagline{margin-top:16px;}
   .hero .tagline{margin-top:14px;font-size:17px;color:rgba(255,255,255,.85);max-width:560px;}
   .hero .tagline b{color:#ffd76a;font-weight:700;}
   .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
@@ -128,7 +138,8 @@
   @media (max-width:900px){
     .hero{padding:54px 0 72px;}
     .hero-art{display:none;}
-    .hero h1{font-size:34px;}
+    .hero-title .big{font-size:30px;letter-spacing:.5px;}
+    .hero-title .hello{font-size:14px;letter-spacing:3px;}
     .hero-stat b{font-size:21px;}
     .about-grid{grid-template-columns:1fr;}
     .works{grid-template-columns:1fr;}
@@ -153,7 +164,10 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.5-6.3 4.5L8 13.8 2 9.2h7.6z" fill="#ffd76a"/></svg>
         PORTFOLIO · 求职意向：商业数据分析师
       </div>
-      <h1>你好，我是<span class="thin"> 小Q </span><br>一名用数据回答业务问题的分析师</h1>
+      <h1 class="hero-title">
+        <span class="hello">你好，我是小Q</span>
+        <span class="big">让数据<em>讲清</em>业务问题</span>
+      </h1>
       <p class="tagline">从<b>指标拆解</b>到<b>归因洞察</b>，再到<b>可视化看板</b> —— 擅长把杂乱的多平台业务数据，变成可执行的经营决策。</p>
       <div class="hero-tags">
         <span>电商 / 种草营销分析</span>
@@ -334,7 +348,7 @@
 </section>
 
 <footer>
-  数据分析作品集<span class="dot">·</span>小Q<span class="dot">·</span>所有作品均可点击在线查看
+  数据分析作品集<span class="dot">·</span>小Q<span class="dot">·</span><a href="mailto:qzk200011@163.com" style="color:var(--accent);text-decoration:none;font-weight:600;">qzk200011@163.com</a>
 </footer>
 
 <div id="toast">链接已复制</div>
