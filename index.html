@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="数据分析作品集：达人种草分析看板、电商种草分析洞察、电商库存与收益分析路径三段完整业务实战。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b5aed'/%3E%3Crect x='14' y='34' width='8' height='16' rx='2' fill='%23fff' opacity='.85'/%3E%3Crect x='28' y='24' width='8' height='26' rx='2' fill='%23fff' opacity='.9'/%3E%3Crect x='42' y='14' width='8' height='36' rx='2' fill='%23ffd76a'/%3E%3C/svg%3E">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小Q · 数据分析作品集">
-<meta property="og:description" content="数据分析作品集：达人种草分析看板、电商种草分析洞察、电商库存与收益分析路径三段完整业务实战。">
-<meta property="og:image" content="https://primarystudents.github.io/xiaoq/assets/preview-dashboard.jpg">
-<meta property="og:url" content="https://primarystudents.github.io/xiaoq/">
+<html lang="zh-CN" data-page-node-id="fbAXsSaiLFzj7A7uEZUJDF">
+<head data-page-node-id="2jdqYOGnyX67phdlLvm7AD">
+<meta charset="UTF-8" data-page-node-id="neoPbSR4ZYb169BCqklIft">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="hIr1iNNau2DIYB3BRlPrd4">
+<meta name="description" content="数据分析作品集：达人种草分析看板、电商种草分析洞察、电商库存与收益分析路径三段完整业务实战。" data-page-node-id="udz4RxzPrBFbfUDXdnnRoI">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b5aed'/%3E%3Crect x='14' y='34' width='8' height='16' rx='2' fill='%23fff' opacity='.85'/%3E%3Crect x='28' y='24' width='8' height='26' rx='2' fill='%23fff' opacity='.9'/%3E%3Crect x='42' y='14' width='8' height='36' rx='2' fill='%23ffd76a'/%3E%3C/svg%3E" data-page-node-id="P8jprmcMxkIN0o5O9VUdxx">
+<meta property="og:type" content="website" data-page-node-id="BlMYQ2gjzM01bSrR61IaDY">
+<meta property="og:title" content="小Q · 数据分析作品集" data-page-node-id="8UxDobHUtNEpPE9rmLAxcD">
+<meta property="og:description" content="数据分析作品集：达人种草分析看板、电商种草分析洞察、电商库存与收益分析路径三段完整业务实战。" data-page-node-id="ZBy4ye52sklsVfG0bEyOg2">
+<meta property="og:image" content="https://primarystudents.github.io/xiaoq/assets/preview-dashboard.jpg" data-page-node-id="QDavXoQBEb6vFxLKLa3XZC">
+<meta property="og:url" content="https://primarystudents.github.io/xiaoq/" data-page-node-id="oMXLRpXTV4FAePOUqaVRoA">
 
 <title>小Q · 数据分析作品集</title>
 <style>
@@ -38,7 +38,7 @@
     border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 16px;
     font-size:13.5px;letter-spacing:2px;margin-bottom:22px;}
   .hero-badge svg{flex-shrink:0;}
-  .hero-title .hello{display:block;font-size:16px;font-weight:400;color:rgba(255,255,255,.78);letter-spacing:4px;margin-bottom:12px;}
+  .hero-title .hello{display:block;font-size:20px;font-weight:500;color:rgba(255,255,255,.88);letter-spacing:3px;margin-bottom:12px;}
   .hero-title .big{display:block;font-size:46px;font-weight:800;letter-spacing:1.5px;line-height:1.22;}
   .hero-title .big em{font-style:normal;color:#ffd76a;}
   .hero .tagline{margin-top:16px;}
@@ -53,6 +53,11 @@
   .hero-stat + .hero-stat::before{content:'';position:absolute;left:0;top:22%;height:56%;width:1px;background:rgba(255,255,255,.18);}
   .hero-stat b{display:block;font-size:27px;font-weight:800;color:#ffd76a;letter-spacing:-.5px;}
   .hero-stat span{display:block;font-size:12.5px;color:rgba(255,255,255,.72);margin-top:4px;}
+
+  .hero-contact{margin-top:20px;display:inline-flex;align-items:center;gap:7px;
+    font-size:13px;color:rgba(255,255,255,.62);letter-spacing:.3px;}
+  .hero-contact a{color:rgba(255,255,255,.62);text-decoration:none;transition:color .2s;}
+  .hero-contact a:hover{color:#fff;}
 
   /* Hero 右侧 SVG 插画 */
   .hero-art{flex-shrink:0;width:330px;display:flex;justify-content:center;}
@@ -112,6 +117,12 @@
   .work-actions{display:flex;gap:10px;margin-top:18px;}
   .chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:4px 12px;
     font-size:12px;font-weight:700;backdrop-filter:blur(4px);}
+  .proj-label{margin:34px 0 14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .proj-label:first-child{margin-top:0;}
+  .proj-label b{font-size:16.5px;font-weight:800;color:var(--accent-deep);display:inline-flex;align-items:center;gap:9px;}
+  .proj-label b::before{content:'';width:5px;height:16px;background:var(--accent);border-radius:3px;}
+  .proj-label span{font-size:13px;color:var(--muted);}
+
   .chip.board{background:#123c8f;color:#fff;}
   .chip.report{background:#0a9e6b;color:#fff;}
   .chip.map{background:#e07a2f;color:#fff;}
@@ -139,7 +150,7 @@
     .hero{padding:54px 0 72px;}
     .hero-art{display:none;}
     .hero-title .big{font-size:30px;letter-spacing:.5px;}
-    .hero-title .hello{font-size:14px;letter-spacing:3px;}
+    .hero-title .hello{font-size:16px;letter-spacing:2.5px;}
     .hero-stat b{font-size:21px;}
     .about-grid{grid-template-columns:1fr;}
     .works{grid-template-columns:1fr;}
@@ -154,108 +165,112 @@
   }
 </style>
 </head>
-<body>
+<body data-page-node-id="vE8ajjrMteTmStH9ssgFFB">
 
 <!-- ═══════ Hero ═══════ -->
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-main">
-      <div class="hero-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.5-6.3 4.5L8 13.8 2 9.2h7.6z" fill="#ffd76a"/></svg>
+<header class="hero" data-page-node-id="EvqF9UFZYAELY071P0YmK6">
+  <div class="wrap hero-grid" data-page-node-id="mc67PjGPbiOC9JrXnMYDpW">
+    <div class="hero-main" data-page-node-id="59xyM68y8D81yyt9TqZJFa">
+      <div class="hero-badge" data-page-node-id="NePkUIoZ3EBx3AouYd1vOI">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" data-page-node-id="g2OsJVWKq11J5zQlaRBQlc"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.5-6.3 4.5L8 13.8 2 9.2h7.6z" fill="#ffd76a" data-page-node-id="UMBsl9wHNFqlVmEjSC7khb"/></svg>
         PORTFOLIO · 求职意向：商业数据分析师
       </div>
-      <h1 class="hero-title">
-        <span class="hello">你好，我是小Q</span>
-        <span class="big">让数据<em>讲清</em>业务问题</span>
+      <h1 class="hero-title" data-page-node-id="ziH0cv5OI9kZMxDLz9gmPw">
+        <span class="hello" data-page-node-id="x6OsDlipEJ8FeBCDOWONV6">你好，我是小Q</span>
+        <span class="big" data-page-node-id="GlvTvCkJfAfuOU04ddwN3w">让数据<em data-page-node-id="wcZLbBzFAbGaAlOkVJjcKm">讲清</em>业务问题</span>
       </h1>
-      <p class="tagline">从<b>指标拆解</b>到<b>归因洞察</b>，再到<b>可视化看板</b> —— 擅长把杂乱的多平台业务数据，变成可执行的经营决策。</p>
-      <div class="hero-tags">
-        <span>电商 / 种草营销分析</span>
-        <span>机票电商 · 收益管理</span>
-        <span>指标体系搭建</span>
-        <span>Tableau / PowerBI</span>
+      <p class="tagline" data-page-node-id="kG8BjqDIBmnBFjHNxhvOOG">从<b data-page-node-id="JmOBoGEPo0119QluADj98S">指标拆解</b>到<b data-page-node-id="OO89UtA1c2SO2nIlh1FVO6">归因洞察</b>，再到<b data-page-node-id="nGnRGKqhyjAWL4lB3Nv8Hs">可视化看板</b> —— 擅长把杂乱的多平台业务数据，变成可执行的经营决策。</p>
+      <div class="hero-tags" data-page-node-id="k2FFMoEOdJp22SFIOQ8Yt5">
+        <span data-page-node-id="5pEtCTpanEoJF2oYSBtV0v">电商 / 种草营销分析</span>
+        <span data-page-node-id="XPUnMVCZylfU8mZswUkdsY">机票电商 · 收益管理</span>
+        <span data-page-node-id="kfw5aXO3TGpl2jk3Ow2nc9">指标体系搭建</span>
+        <span data-page-node-id="OLnkp8iDntzpk031pD1wXp">Tableau / PowerBI</span>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><b>3 个</b><span>完整分析项目</span></div>
-        <div class="hero-stat"><b>10万+</b><span>多平台订单数据整合</span></div>
-        <div class="hero-stat"><b>-15.7%</b><span>种草投放成本优化</span></div>
-        <div class="hero-stat"><b>+18.7%</b><span>单票利润提升</span></div>
+      <div class="hero-stats" data-page-node-id="YAioI9Ka3CTap5dC9BL7KV">
+        <div class="hero-stat" data-page-node-id="i1XALOozYocy26Pq0Th3A5"><b data-page-node-id="hnFzDR4KH3KY00b2ciRCgl">3 个</b><span data-page-node-id="MiR0GSgQgUUnv5BpwDUdC8">完整分析项目</span></div>
+        <div class="hero-stat" data-page-node-id="rcoPsdR8dolK2TMFzXur6H"><b data-page-node-id="gWkGVOI7uDPnVIBF5ozdXy">10万+</b><span data-page-node-id="tw8VvuBK5LJUsR1hYm2Ezp">处理数据量</span></div>
+        <div class="hero-stat" data-page-node-id="gSp1O0fvm965YUXmAW5sWh"><b data-page-node-id="aHG3GHsF3GZjWbwBRP5Dhl">-15.7%</b><span data-page-node-id="w3ldvTf1RpYHP0muHWn5zU">种草投放成本优化</span></div>
+        <div class="hero-stat" data-page-node-id="QdCGSlN0sJTYWaKGlK4VIh"><b data-page-node-id="72bmABRikCmDvlR0AS2lvU">+18.7%</b><span data-page-node-id="rY435g4BHs9yOdfFNq3iKt">单票利润提升</span></div>
+      </div>
+      <div class="hero-contact" data-page-node-id="ADMb29diORe2e0nO4gmZhj">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" data-page-node-id="a0oWz2EGzVs8DFIbtu2XZ1"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8" data-page-node-id="X0WCjQsZe17v4LVVVU0JP2"/><path d="M3.5 7l8.5 6 8.5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="8qyAZMVxt4sYc2BRr56hmp"/></svg>
+        <a href="mailto:qzk200011@163.com" data-page-node-id="j8zZwhX7G9VvsZmiN9bqOJ">qzk200011@163.com</a>
       </div>
     </div>
-    <div class="hero-art">
-      <svg width="330" height="270" viewBox="0 0 330 270" fill="none">
-        <rect x="30" y="30" width="270" height="200" rx="16" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.25)"/>
-        <line x1="55" y1="195" x2="275" y2="195" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-        <rect x="70" y="150" width="26" height="45" rx="4" fill="#7ea2ff"/>
-        <rect x="112" y="120" width="26" height="75" rx="4" fill="#7ea2ff"/>
-        <rect x="154" y="95" width="26" height="100" rx="4" fill="#a9c3ff"/>
-        <rect x="196" y="60" width="26" height="135" rx="4" fill="#ffd76a"/>
-        <polyline points="83,120 125,95 167,70 209,38 251,28" stroke="#ffd76a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="251" cy="28" r="5" fill="#ffd76a"/>
-        <circle cx="209" cy="38" r="4" fill="#fff" opacity=".8"/>
-        <circle cx="167" cy="70" r="4" fill="#fff" opacity=".8"/>
-        <text x="70" y="222" fill="rgba(255,255,255,0.65)" font-size="11">Q1</text>
-        <text x="154" y="222" fill="rgba(255,255,255,0.65)" font-size="11">Q3</text>
-        <text x="238" y="222" fill="rgba(255,255,255,0.65)" font-size="11">Q4</text>
-        <text x="55" y="55" fill="rgba(255,255,255,0.75)" font-size="12" font-weight="600">GMV 收益趋势 ↑</text>
+    <div class="hero-art" data-page-node-id="VbLaRytpjapI6G8aolYgot">
+      <svg width="330" height="270" viewBox="0 0 330 270" fill="none" data-page-node-id="bcTF1zlC2OHdJFbTEmiFrI">
+        <rect x="30" y="30" width="270" height="200" rx="16" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.25)" data-page-node-id="a3KQCr9rSeHLGpj4NpS6BQ"/>
+        <line x1="55" y1="195" x2="275" y2="195" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" data-page-node-id="sBEjw0WBPc1AqheVFKdzs8"/>
+        <rect x="70" y="150" width="26" height="45" rx="4" fill="#7ea2ff" data-page-node-id="uBZSimYcs4AhR7oLe8cQ2o"/>
+        <rect x="112" y="120" width="26" height="75" rx="4" fill="#7ea2ff" data-page-node-id="Y7l1mw5kI4y5rKk1Gn0PEh"/>
+        <rect x="154" y="95" width="26" height="100" rx="4" fill="#a9c3ff" data-page-node-id="HKvzsMWMpoQY2mbWE0qzD0"/>
+        <rect x="196" y="60" width="26" height="135" rx="4" fill="#ffd76a" data-page-node-id="yqEbsaQO3soKE3f1dOpdc9"/>
+        <polyline points="83,120 125,95 167,70 209,38 251,28" stroke="#ffd76a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="DcYFGRPFhQoaSWs6sTkTCD"/>
+        <circle cx="251" cy="28" r="5" fill="#ffd76a" data-page-node-id="63OtWwzMvkD5cLWz7hfk5J"/>
+        <circle cx="209" cy="38" r="4" fill="#fff" opacity=".8" data-page-node-id="Mpjq4XI567vxIJYrxBya4Q"/>
+        <circle cx="167" cy="70" r="4" fill="#fff" opacity=".8" data-page-node-id="hsfhzBhZvOVA5rgWHznUJh"/>
+        <text x="70" y="222" fill="rgba(255,255,255,0.65)" font-size="11" data-page-node-id="nIpTkOzRKLN8YAoY0mGI07">Q1</text>
+        <text x="154" y="222" fill="rgba(255,255,255,0.65)" font-size="11" data-page-node-id="a6igemJVbJUbBgmNanbLyd">Q3</text>
+        <text x="238" y="222" fill="rgba(255,255,255,0.65)" font-size="11" data-page-node-id="nSjlbA28JH8iTiMmewaSCW">Q4</text>
+        <text x="55" y="55" fill="rgba(255,255,255,0.75)" font-size="12" font-weight="600" data-page-node-id="P3J3lusoLWaLGJ7UmShL2V">GMV 收益趋势 ↑</text>
       </svg>
     </div>
   </div>
 </header>
 
 <!-- ═══════ 关于我 ═══════ -->
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head"><h2>关于我</h2><span>教育 · 经历 · 技能栈</span></div>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 10-5-10-5z" stroke="#2b5aed" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round"/></svg>
+<section id="about" data-page-node-id="M3Tco69Ckd2KYRndBxJbZI">
+  <div class="wrap" data-page-node-id="XyEDOftKnSbaSDxHWaHcBC">
+    <div class="sec-head" data-page-node-id="7hGdqBO6VaZFW4sEPoFFA5"><h2 data-page-node-id="IEWiXr6XmWjcJ2GNAdN1Kc">关于我</h2><span data-page-node-id="ZbCgsCMMfAr1yIseBDEV6Y">教育 · 经历 · 技能栈</span></div>
+    <div class="about-grid" data-page-node-id="C0FOnMoobQ4K4849xzAY8d">
+      <div class="about-card" data-page-node-id="re8X7Rb56IJUjuyFDzb6eM">
+        <h3 data-page-node-id="GPEB2jnJRt3bYvdGA9SFRC">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" data-page-node-id="CwxUh8Pw1USxVUJaPGQogd"><path d="M12 3L2 8l10 5 10-5-10-5z" stroke="#2b5aed" stroke-width="1.8" stroke-linejoin="round" data-page-node-id="6p9JrFesIQBZ6mZeNJFKFB"/><path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round" data-page-node-id="IbJaULCAIqAgrEQDmaDPZn"/></svg>
           教育与经历
         </h3>
-        <div class="tl">
-          <div class="tl-item">
-            <div class="tl-time">2025.10 – 2026.07</div>
-            <div class="tl-title">某机票跨境电商企业 · 数据分析师</div>
-            <div class="tl-desc">统一携程/飞猪/美团/Agoda 多平台数据口径，搭建 GMV、库存损失率、转化率指标框架；Tableau 自动化看板覆盖 3 大维度 6 个核心指标；定价、收益预测等专项分析支持运营决策。</div>
+        <div class="tl" data-page-node-id="IzauaR1AEcUTQN1usgoQoB">
+          <div class="tl-item" data-page-node-id="Lv1GFwYfn9hBgArW7LdgRH">
+            <div class="tl-time" data-page-node-id="crRnur5yhaJKLDAZidic2Q">2025.10 – 2026.07</div>
+            <div class="tl-title" data-page-node-id="jALfYkHKlnDz5LBrdcCT1i">某机票跨境电商企业 · 数据分析师</div>
+            <div class="tl-desc" data-page-node-id="ETPyNSOaUMoZRktoRKGTFI">统一携程/飞猪/美团/Agoda 多平台数据口径，搭建 GMV、库存损失率、转化率指标框架；Tableau 自动化看板覆盖 3 大维度 6 个核心指标；定价、收益预测等专项分析支持运营决策。</div>
           </div>
-          <div class="tl-item">
-            <div class="tl-time">2025</div>
-            <div class="tl-title">马来亚大学 · 科学传播 硕士</div>
-            <div class="tl-desc">主修统计学基础、Python 数据分析、SPSS、分析方法论；毕业论文结合数据分析完成。</div>
+          <div class="tl-item" data-page-node-id="uwhmdRJkd1yAxzC5d5dnHz">
+            <div class="tl-time" data-page-node-id="9Nq5xDWDSbUBYu1eFrF1dY">2025</div>
+            <div class="tl-title" data-page-node-id="Ec2kGELxPWMVAH69Vb814P">马来亚大学 · 科学传播 硕士</div>
+            <div class="tl-desc" data-page-node-id="XgOtlrzYRzyNLRd4ABwCtN">主修统计学基础、Python 数据分析、SPSS、分析方法论；毕业论文结合数据分析完成。</div>
           </div>
-          <div class="tl-item">
-            <div class="tl-time">2023.03 – 2023.07</div>
-            <div class="tl-title">蓝色光标（出海投放）· 媒介投放（数据分析方向）</div>
-            <div class="tl-desc">搭建曝光-互动-转化-成本达人评估体系并分层；PowerBI 交互式仪表盘筛选优质达人；基于 AARRR 模型定位投放流失环节。</div>
+          <div class="tl-item" data-page-node-id="illrogQvQDJsCMBtQK7H5B">
+            <div class="tl-time" data-page-node-id="2v7MvfCRt2mzOIRHDMrDvb">2023.03 – 2023.07</div>
+            <div class="tl-title" data-page-node-id="CgSdK0IOqSJWOrWDmNkyzR">蓝色光标（出海投放）· 媒介投放（数据分析方向）</div>
+            <div class="tl-desc" data-page-node-id="Omx48FztaAyVP0GUzIF9o2">搭建曝光-互动-转化-成本达人评估体系并分层；PowerBI 交互式仪表盘筛选优质达人；基于 AARRR 模型定位投放流失环节。</div>
           </div>
-          <div class="tl-item">
-            <div class="tl-time">2019 – 2023</div>
-            <div class="tl-title">青岛电影学院 · 戏剧影视文学 本科</div>
-            <div class="tl-desc">文字与叙事训练，让分析报告既严谨又讲得清楚。</div>
+          <div class="tl-item" data-page-node-id="4IoluQvTSpdTvCoFhIfmRc">
+            <div class="tl-time" data-page-node-id="cH40BvEJIdWOlOuORS6co6">2019 – 2023</div>
+            <div class="tl-title" data-page-node-id="wSCzKFtvsRi2mh9ljsMjsj">青岛电影学院 · 戏剧影视文学 本科</div>
+            <div class="tl-desc" data-page-node-id="m0brjOiPKrdJAH01F6oy0q">文字与叙事训练，让分析报告既严谨又讲得清楚。</div>
           </div>
         </div>
       </div>
-      <div class="about-card">
-        <h3>
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z" stroke="#2b5aed" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <div class="about-card" data-page-node-id="xJHykvzZChKPGqwOFCCJPM">
+        <h3 data-page-node-id="v1FEhntNlqXm5XfWRp9mtP">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" data-page-node-id="VhpjluMYiYYWVHkEbDHSUG"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z" stroke="#2b5aed" stroke-width="1.8" stroke-linejoin="round" data-page-node-id="U9hzpn7rvZ3cpZEvsEmNxF"/></svg>
           技能栈
         </h3>
-        <div class="skill-group">
-          <div class="sg-label">数据工具</div>
-          <div class="chips"><span>SQL</span><span>Python</span><span>Tableau</span><span>PowerBI</span><span>Excel</span></div>
+        <div class="skill-group" data-page-node-id="XETQGEiCFab5jKO4uimsKR">
+          <div class="sg-label" data-page-node-id="yNtO4swd6AqSEAtJnknXTU">数据工具</div>
+          <div class="chips" data-page-node-id="uVH7kGxMFHWtg6B2Bss9wN"><span data-page-node-id="iW4YGlrUcG3YkhVpAC1i3y">SQL</span><span data-page-node-id="c4azo8YqPCbjZ4Zm6tETMS">Python</span><span data-page-node-id="leMiH7BQbiCgW7RbLgDGuU">Tableau</span><span data-page-node-id="Uh7mKCCbocCcf7miBUrLJb">PowerBI</span><span data-page-node-id="tzPEwGn23alVq3tfnEuumT">Excel</span></div>
         </div>
-        <div class="skill-group">
-          <div class="sg-label">分析方法</div>
-          <div class="chips"><span>指标体系</span><span>归因分析</span><span>异动分析</span><span>经营分析</span><span>漏斗 / AARRR</span><span>A/B 实验</span><span>UE 单位经济模型</span></div>
+        <div class="skill-group" data-page-node-id="n5qbEHy22QT3hY80MvelCN">
+          <div class="sg-label" data-page-node-id="GMwBzoMA47UGyEudphXAAK">分析方法</div>
+          <div class="chips" data-page-node-id="et0YKiXOPjDwgEQy78P56v"><span data-page-node-id="kITdBnL4mbWt0ESadyr3Zw">指标体系</span><span data-page-node-id="TugwECnpxs69Sp1TDcOzBF">归因分析</span><span data-page-node-id="EAVwRdkRub9TGkYAkGAzIx">异动分析</span><span data-page-node-id="O5mHR1BiHRm4F6AXZzniiA">经营分析</span><span data-page-node-id="FR9UO0GeEUOJvXFwmvQzUC">漏斗 / AARRR</span><span data-page-node-id="KssbX0X3a4eCJygcGE9oj1">A/B 实验</span><span data-page-node-id="MuJNHj0mGpilX1QxDF2FjO">UE 单位经济模型</span></div>
         </div>
-        <div class="skill-group">
-          <div class="sg-label">AI 提效</div>
-          <div class="chips"><span class="ai">Codex</span><span class="ai">Claude Code</span><span class="ai">GPT</span><span class="ai">影刀 RPA</span></div>
+        <div class="skill-group" data-page-node-id="BG1pbgDVPrwYkLPQfbk2oA">
+          <div class="sg-label" data-page-node-id="xunbqYBvXMAb615B6S4XoE">AI 提效</div>
+          <div class="chips" data-page-node-id="BgPkxcYx8TF8XBGMZ8E8Wo"><span class="ai" data-page-node-id="zeqT7WE3G3IMLHFmXYs1ib">Codex</span><span class="ai" data-page-node-id="NBWPXfz9DB2wxZNobMGPa1">Claude Code</span><span class="ai" data-page-node-id="dVlFqwM63Z6Tmh4wSKF7m9">GPT</span><span class="ai" data-page-node-id="CB4uegrh89ElBW0Mq7IYua">影刀 RPA</span></div>
         </div>
-        <div class="skill-group">
-          <div class="sg-label">语言</div>
-          <div class="chips"><span>全英授课硕士</span><span>PTE 53（雅思 6.0 水平）</span><span>CET-4</span></div>
+        <div class="skill-group" data-page-node-id="L79OrT5U9Lf6kwB68834aM">
+          <div class="sg-label" data-page-node-id="8W0T5Pe042FaipACNdiKGc">语言</div>
+          <div class="chips" data-page-node-id="PlE09nkpgqKpXgGUFnOGJp"><span data-page-node-id="L8DLtNWlK49OZq1xTpFasd">全英授课硕士</span><span data-page-node-id="Zo5XNB0cJwuWi38G7y7w5z">PTE 53（雅思 6.0 水平）</span><span data-page-node-id="zS6F4yNQKvq8xVRFUXZHjI">CET-4</span></div>
         </div>
       </div>
     </div>
@@ -263,95 +278,107 @@
 </section>
 
 <!-- ═══════ 精选作品 ═══════ -->
-<section id="works">
-  <div class="wrap">
-    <div class="sec-head"><h2>精选作品</h2><span>真实业务数据驱动的完整分析 · 点击卡片即可在线查看</span></div>
-    <div class="works">
+<section id="works" data-page-node-id="GThpUYFzDuKTurHGR82hBj">
+  <div class="wrap" data-page-node-id="3JzM3QMhboaszIQ13MxkAM">
+    <div class="sec-head" data-page-node-id="kt5Brusaq2xvsauwtExAmV"><h2 data-page-node-id="7PLHUlnNUouTVYYKlqAy7R">精选作品</h2><span data-page-node-id="PCAtIOFN6HWZMTDwIjtIgQ">两个完整项目 · 真实业务数据驱动 · 点击卡片即可在线查看</span></div>
+    <div class="proj-label" data-page-node-id="FH6rgoj2bzi6NMRHHfpkD2">
+        <b data-page-node-id="SIH8udPWwx5xiLw2evdIcR">项目一 · 达人种草投放分析</b>
+        <span data-page-node-id="IBgb5ODlO1a8GfbPEyDJwG">同一项目的两个板块：BI 看板 × 分析报告</span>
+      </div>
+      <div class="works" data-page-node-id="1q4rDVYIYmNIRwXRrQw8kL">
 
-      <!-- 作品1：达人种草分析看板（交互看板，置顶大卡） -->
-      <article class="work-card feature">
-        <div class="preview">
-          <img src="assets/preview-dashboard.jpg" alt="达人种草分析看板预览" loading="lazy">
-          <span class="chip board">交互式看板</span>
+      <!-- 板块一：BI 分析看板 -->
+      <article class="work-card" data-page-node-id="cRL3bJVAdJskYz6khQDWX2">
+        <div class="preview" data-page-node-id="C6CxKWXSFHH3d3hGaVANW9">
+          <img src="assets/preview-dashboard.jpg" alt="达人种草 BI 分析看板预览" loading="lazy" data-page-node-id="5IluiPcfz3OGJKIt0kRtFY">
+          <span class="chip board" data-page-node-id="HiDtC9Xykvmw2FLsaZuIYT">BI 看板</span>
         </div>
-        <div class="work-body">
-          <div class="work-top">
-            <div class="work-icon" style="background:var(--accent-soft);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#2b5aed" stroke-width="1.8"/><path d="M7 15l3-4 3 2 4-6" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="work-body" data-page-node-id="7tPer2NW3JsJlnuq3KSoZj">
+          <div class="work-top" data-page-node-id="KmMzCxfh9XlFwE9WdT17l4">
+            <div class="work-icon" style="background:var(--accent-soft);" data-page-node-id="vnj8ojUGiCLV1pUrGeMP3s">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" data-page-node-id="keK38xRCC5FHgSa2RCYQYM"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#2b5aed" stroke-width="1.8" data-page-node-id="fHVxPrOy3CfqWpDUHKxPLF"/><path d="M7 15l3-4 3 2 4-6" stroke="#2b5aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="UA8gH4C8wrfiBL86tPh3WE"/></svg>
             </div>
-            <h3>达人种草分析看板</h3>
+            <h3 data-page-node-id="O7WL7f7uG5ctwWr6t6hyXk">达人种草 · BI 分析看板</h3>
           </div>
-          <p>面向电商达人种草投放场景的交互式分析看板：围绕成交 GMV、达人分层与投放效率搭建指标体系，支持多维度下钻对比，辅助判断"投给谁、投多少、值不值"。</p>
-          <div class="work-meta"><span>GMV 分析</span><span>达人分层</span><span>投放 ROI</span><span>指标拆解</span></div>
-          <div class="work-actions">
-            <a class="btn btn-primary" href="works/dashboard.html" target="_blank" rel="noopener">
+          <p data-page-node-id="k3W3EHccFRlZYFpeg5V2wk">围绕成交 GMV、达人分层与投放效率搭建指标体系，支持多维度下钻对比，辅助判断"投给谁、投多少、值不值"。</p>
+          <div class="work-meta" data-page-node-id="kAoNULd02NJPIFEwpByo7W"><span data-page-node-id="QwtitLIB6WQHdZcHA5Os5Y">GMV 分析</span><span data-page-node-id="ZHd68yoyktmwvuCYQkMIjy">达人分层</span><span data-page-node-id="aTz3nt68LTn4oEuV8mwxSu">投放 ROI</span></div>
+          <div class="work-actions" data-page-node-id="rdZCFG7BbHFhYWTbHmJi3L">
+            <a class="btn btn-primary" href="works/dashboard.html" target="_blank" rel="noopener" data-page-node-id="lFKm1n4JxN4IEA6LZMGOue">
               查看作品
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" data-page-node-id="vVqyhx0cfVxCqskxhQ8Vzz"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="XiFkP0uo13e4zpqCP4PcGM"/></svg>
             </a>
-            <button class="btn btn-ghost" data-url="works/dashboard.html">复制链接</button>
+            <button class="btn btn-ghost" data-url="works/dashboard.html" data-page-node-id="Q5DECbWBj2FvIZAbj5ATAy">复制链接</button>
           </div>
         </div>
       </article>
 
-      <!-- 作品2：电商种草分析洞察报告 -->
-      <article class="work-card">
-        <div class="preview">
-          <img src="assets/preview-report.jpg" alt="电商种草分析洞察预览" loading="lazy">
-          <span class="chip report">分析报告</span>
+      <!-- 板块二：分析报告 -->
+      <article class="work-card" data-page-node-id="u4BAatJ1FZ22PjiIYiTYJh">
+        <div class="preview" data-page-node-id="8jjMF56lR4B94N8hUT6Qea">
+          <img src="assets/preview-report.jpg" alt="达人种草分析报告预览" loading="lazy" data-page-node-id="943CP2tqeOhwbYtqKrWadI">
+          <span class="chip report" data-page-node-id="m0CaNxlo1oBigewdgtwId1">分析报告</span>
         </div>
-        <div class="work-body">
-          <div class="work-top">
-            <div class="work-icon" style="background:var(--green-soft);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#0a9e6b" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12h6M9 16h4" stroke="#0a9e6b" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div class="work-body" data-page-node-id="kLFgh3WDwfbcWZ6cnA4I1V">
+          <div class="work-top" data-page-node-id="lPJNlDHbY4KZuMAiz1wT6V">
+            <div class="work-icon" style="background:var(--green-soft);" data-page-node-id="30oY3xyADVMmK0Dnx5rZSg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" data-page-node-id="26SsW5D9Y2t8ntMjxQW4Jr"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#0a9e6b" stroke-width="1.8" stroke-linejoin="round" data-page-node-id="k51DDE3c4tmtKRHydVYfXz"/><path d="M9 12h6M9 16h4" stroke="#0a9e6b" stroke-width="1.8" stroke-linecap="round" data-page-node-id="KjX7B8jg7bSrmGLwod8zyQ"/></svg>
             </div>
-            <h3>电商种草分析洞察</h3>
+            <h3 data-page-node-id="2RC3THs0ZKPznvIN8gbCGu">达人种草 · 分析报告</h3>
           </div>
-          <p>以某户外品牌为例的种草投放分析：从曝光、CPM、成本结构到转化对比，定位投放浪费环节并给出可执行的优化建议。</p>
-          <div class="work-meta"><span>CPM / 成本</span><span>曝光转化</span><span>投放诊断</span></div>
-          <div class="work-actions">
-            <a class="btn btn-primary" href="works/insight/index.html" target="_blank" rel="noopener">
+          <p data-page-node-id="PQXN0vcqeyvR9kaHKfaLiz">同一项目的深挖板块：从曝光、CPM、成本结构到转化对比，定位投放浪费环节并给出可执行的优化建议。</p>
+          <div class="work-meta" data-page-node-id="XmsC9SCPtX3d2F9SIkVWs9"><span data-page-node-id="Ha7v1TKGGiJptyvOzM4AG0">CPM / 成本</span><span data-page-node-id="wAVualWpjWpFEwRtxvknqc">曝光转化</span><span data-page-node-id="YHP6BTLGxy4Ubom3QyjcLQ">投放诊断</span></div>
+          <div class="work-actions" data-page-node-id="6SYu1G3MgH6LhwodRKq8vJ">
+            <a class="btn btn-primary" href="works/insight/index.html" target="_blank" rel="noopener" data-page-node-id="lU8cVQbuBHeRcJ5di4a0Rl">
               查看作品
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" data-page-node-id="sJA7a83qIsMSBDk0BJyix5"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="bqgPQv5ZnaoFYtsxkjwnix"/></svg>
             </a>
-            <button class="btn btn-ghost" data-url="works/insight/index.html">复制链接</button>
+            <button class="btn btn-ghost" data-url="works/insight/index.html" data-page-node-id="JwzVc8nkKdIL0YVFEOp76r">复制链接</button>
           </div>
         </div>
       </article>
 
-      <!-- 作品3：电商库存与收益分析路径 -->
-      <article class="work-card">
-        <div class="preview">
-          <img src="assets/preview-mindmap.jpg" alt="电商库存与收益分析路径预览" loading="lazy">
-          <span class="chip map">思维导图</span>
+      </div>
+
+      <div class="proj-label" data-page-node-id="IeoFQJ6enKcvFl73mQ3KZi">
+        <b data-page-node-id="7fyWjVTggZN5wrEAPEacL3">项目二 · 电商库存与收益分析</b>
+        <span data-page-node-id="77vVNIOqkUjQVCGRenLSt8">库存损失率拆解 → 定价实验 → 收益预测</span>
+      </div>
+      <div class="works" data-page-node-id="4PNRT9RTu5NF50LunXC749">
+
+      <!-- 项目二：分析路径思维导图（整行大卡） -->
+      <article class="work-card feature" data-page-node-id="VXBeUqctBmiAweL5cxT8yT">
+        <div class="preview" data-page-node-id="TPoPKbBk7eEX630Bv9xAoj">
+          <img src="assets/preview-mindmap.jpg" alt="电商库存与收益分析路径预览" loading="lazy" data-page-node-id="SEY6JCFRCjCompLnUWm2qV">
+          <span class="chip map" data-page-node-id="ivvnwKSJZ6gj3PmcB8dIuG">分析路径导图</span>
         </div>
-        <div class="work-body">
-          <div class="work-top">
-            <div class="work-icon" style="background:#fdf0e2;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="2.5" stroke="#e07a2f" stroke-width="1.8"/><circle cx="18" cy="12" r="2.5" stroke="#e07a2f" stroke-width="1.8"/><circle cx="6" cy="18" r="2.5" stroke="#e07a2f" stroke-width="1.8"/><path d="M8.2 7.2l7.4 3.6M8.2 16.8l7.4-3.6" stroke="#e07a2f" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div class="work-body" data-page-node-id="bi2QeVJAwwS5SMvBesIj8a">
+          <div class="work-top" data-page-node-id="8RtpbzwOilU4a3gMYevzLu">
+            <div class="work-icon" style="background:#fdf0e2;" data-page-node-id="vT5FwjrmnOu6o47TniFIg2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" data-page-node-id="fJ99BIoH9uA8CjZwnq2nJd"><circle cx="6" cy="6" r="2.5" stroke="#e07a2f" stroke-width="1.8" data-page-node-id="aQxkcBs9jMRoiH50mZWT79"/><circle cx="18" cy="12" r="2.5" stroke="#e07a2f" stroke-width="1.8" data-page-node-id="ORLMGgU853VkpUjLakPlOi"/><circle cx="6" cy="18" r="2.5" stroke="#e07a2f" stroke-width="1.8" data-page-node-id="HYSSh0ywP1m3jUBwriTOhY"/><path d="M8.2 7.2l7.4 3.6M8.2 16.8l7.4-3.6" stroke="#e07a2f" stroke-width="1.8" stroke-linecap="round" data-page-node-id="UqB4opVioPX34edI6dMoB8"/></svg>
             </div>
-            <h3>电商库存与收益分析路径</h3>
+            <h3 data-page-node-id="xDlIunApIScnyIZQeusdid">电商库存与收益分析路径</h3>
           </div>
-          <p>从库存损失率拆解到收益预测的完整分析路径：定位中远期销量问题，A/B 实验确立两档定价策略，UE 模型输出三档收益预测。</p>
-          <div class="work-meta"><span>库存损失率</span><span>A/B 定价实验</span><span>GMV 预测</span></div>
-          <div class="work-actions">
-            <a class="btn btn-primary" href="works/mindmap.html" target="_blank" rel="noopener">
+          <p data-page-node-id="XRCmc6yuMbxIR8CG09aeOf">从库存损失率拆解到收益预测的完整分析路径：定位中远期销量问题，A/B 实验确立两档定价策略，UE 模型输出三档收益预测。</p>
+          <div class="work-meta" data-page-node-id="65t1oyQ6VGZAC3V5EeMzEI"><span data-page-node-id="O6IuohRsny6mBzhsQVaxrb">库存损失率</span><span data-page-node-id="hDoMkbmhwufTxIjKCTwovg">A/B 定价实验</span><span data-page-node-id="WiD4H5iDqQWMJPgaMsXwcD">GMV 预测</span></div>
+          <div class="work-actions" data-page-node-id="wZrgNxBjdi8P73c9dsCUjd">
+            <a class="btn btn-primary" href="works/mindmap.html" target="_blank" rel="noopener" data-page-node-id="dtJix44jY7AToO162kT8b3">
               查看作品
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" data-page-node-id="86MMC0d5AgCS1wuvY0BG7i"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="QYu4FyLFRkJrKNyKwKCGS5"/></svg>
             </a>
-            <button class="btn btn-ghost" data-url="works/mindmap.html">复制链接</button>
+            <button class="btn btn-ghost" data-url="works/mindmap.html" data-page-node-id="9A8FgBgLCc84I6jDQczkFy">复制链接</button>
           </div>
         </div>
       </article>
 
-    </div>
+      </div>
   </div>
 </section>
 
-<footer>
-  数据分析作品集<span class="dot">·</span>小Q<span class="dot">·</span><a href="mailto:qzk200011@163.com" style="color:var(--accent);text-decoration:none;font-weight:600;">qzk200011@163.com</a>
+<footer data-page-node-id="h7ThTosetd8kRBPip4dcRL">
+  数据分析作品集<span class="dot" data-page-node-id="OK42PU7DsCSqANfK0gMxgD">·</span>小Q<span class="dot" data-page-node-id="h3GKlk4LilDVVY6re1GRVk">·</span>所有作品均可点击在线查看
 </footer>
 
-<div id="toast">链接已复制</div>
+<div id="toast" data-page-node-id="NkKfEIQh5mPM7JzceZaSxW">链接已复制</div>
 
 <script>
   function copyText(text){
